@@ -1,0 +1,754 @@
+\documentclass[11pt,a4paper]{article}
+
+% Pacotes de idioma e fontes
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+
+% Pacotes Matemáticos e Gráficos
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz} 
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% Pacotes de Layout
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{paracol} % Permite colunas paralelas independentes
+\usepackage{enumitem}
+
+% Definição Global de Macros Gráficas
+\newcommand{\match}[4]{
+    \draw[line width=1.5pt, draw=gray!80] (#1,#2) -- (#3,#4);
+    \fill[black!70] (#1,#2) circle (2pt);
+}
+
+% Configuração da linha divisória e larguras das colunas
+\setlength{\columnsep}{1cm} 
+\setlength{\columnseprule}{0.5pt}
+
+\begin{document}
+
+% Cabeçalho Centralizado
+\begin{center}
+    \textbf{\Large PEAC-2026 | MATEMÁTICA - EAD} \\[0.2cm]
+    \textbf{\large AULA 16-17 - Função Exponencial e Função Logarítmica} \\[0.2cm]
+    \textit{Questões de Vestibulares de anos anteriores (UFRGS).}
+\end{center}
+\vspace{0.5cm}
+
+% Início do ambiente de colunas paralelas
+\begin{paracol}{2}
+
+% =========================================================
+% QUESTÕES
+% =========================================================
+
+\switchcolumn[0]*
+\textbf{1) UFRGS-2025} \\
+Considere as seguintes afirmações sobre números racionais.
+
+\begin{enumerate}[label=\Roman*., itemsep=0.2cm]
+    \item Se $0 < a \le b$, então $b^a$ é sempre um número irracional.
+    \item Se $0 < a \le b$, então $0 < a \le \dfrac{a+b}{2} \le b$.
+    \item Se $0 < a < b < 1$, então $\log(a) < \log(b) < 0$.
+\end{enumerate}
+
+Quais estão corretas?
+
+\begin{enumerate}[label=(\Alph*)]
+    \item Apenas I.
+    \item Apenas II.
+    \item Apenas I e III.
+    \item Apenas II e III.
+    \item I, II e III.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{7cm} 
+
+\switchcolumn[0]*
+\textbf{2) UFRGS-2025} \\
+A soma das raízes da equação $2^{x^2-3x-10} = 1$ é
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $-3$.
+    \item $-2$.
+    \item $0$.
+    \item $2$.
+    \item $3$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\switchcolumn[0]*
+\textbf{3) UFRGS-2025} \\
+A equação $\log(x) + \log(x - 1) = \log 6$ tem conjunto solução nos números reais. 
+
+O conjunto solução da equação é
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $\{-2\}$.
+    \item $\{3\}$.
+    \item $\{3, 2\}$.
+    \item $\{3, -2\}$.
+    \item $\{-3, -2\}$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\switchcolumn[0]*
+\textbf{4) UFRGS-2024} \\
+Considere as seguintes afirmações sobre números e suas operações.
+
+\begin{enumerate}[label=\Roman*., itemsep=0.2cm]
+    \item A soma de dois números naturais consecutivos é sempre um número ímpar.
+    \item A soma de dois números irracionais é sempre um número irracional.
+    \item Se $a > 1$, então, para qualquer valor inteiro de $n$, $0 < \dfrac{1}{a^n} < 1$.
+\end{enumerate}
+
+Quais estão corretas?
+
+\begin{enumerate}[label=(\Alph*)]
+    \item Apenas I.
+    \item Apenas III.
+    \item Apenas I e II.
+    \item Apenas II e III.
+    \item I, II e III.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{7cm} 
+
+\switchcolumn[0]*
+\textbf{5) UFRGS-2024} \\
+O valor da expressão \\
+$\log(2024) - \log(202{,}4) + \log(20{,}24) - \log(2{,}024)$ é
+
+\begin{enumerate}[label=(\Alph*)]
+    \item 4.
+    \item 2.
+    \item 0.
+    \item $-2$.
+    \item $-4$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\switchcolumn[0]*
+\textbf{6) UFRGS-2023} \\
+Considere as seguintes afirmações sobre números e suas operações.
+
+\begin{enumerate}[label=\Roman*., itemsep=0.3cm]
+    \item $1 + \dfrac{1}{2} + \dfrac{1}{4} + \dfrac{1}{8} \dots > 2 + \dfrac{2}{3} + \dfrac{2}{9} + \dfrac{2}{27} \dots \, .$
+    \item $\sqrt{\sqrt{7} + 10} < \sqrt{\sqrt{7}} + \sqrt{10} \, .$
+    \item $6 \cdot 5^{10} < 5 \cdot 6^{10} \, .$
+\end{enumerate}
+
+Quais estão corretas?
+
+\begin{enumerate}[label=(\Alph*)]
+    \item Apenas I.
+    \item Apenas II.
+    \item Apenas I e III.
+    \item Apenas II e III.
+    \item I, II e III.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{8cm} 
+
+\switchcolumn[0]*
+\textbf{7) UFRGS-2023} \\
+Se $a$ e $b$ são as raízes da equação $x^2 + 2x - 15 = 0$, então o valor de $(ab)^{a+b}$ é
+
+\begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+    \item $-225$.
+    \item $-\dfrac{1}{225}$.
+    \item $-30$.
+    \item $\dfrac{1}{225}$.
+    \item $225$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{7cm}
+
+\switchcolumn[0]*
+\textbf{8) UFRGS-2023} \\
+A figura abaixo mostra o início de uma sequência infinita de quadrados. A medida dos lados dos quadrados $Q_1$, $Q_2$ e $Q_3$ são, respectivamente, $\log(2)$, $\log(\sqrt{2})$ e $\log(\sqrt[4]{2})$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Q1
+    \draw[thick] (0,0) rectangle (2,2);
+    \node[below] at (1,0) {$Q_1$};
+    
+    % Q2
+    \draw[thick] (2.8,0) rectangle (3.8,1);
+    \node[below] at (3.3,0) {$Q_2$};
+    
+    % Q3
+    \draw[thick] (4.5,0) rectangle (5,0.5);
+    \node[below] at (4.75,0) {$Q_3$};
+    
+    % Reticências
+    \node[right] at (5.3,0.25) {...};
+\end{tikzpicture}
+\end{center}
+
+A soma das áreas dessa sequência infinita de quadrados é
+
+\begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+    \item $\dfrac{1}{3} \cdot [\log(2)]^2$.
+    \item $\dfrac{4}{3} \cdot [\log(2)]^2$.
+    \item $\dfrac{2}{3} \cdot [\log(2)]^2$.
+    \item $\log(2 + \sqrt{2} + \sqrt[4]{2})$.
+    \item $\log(2 \cdot \sqrt{2} \cdot \sqrt[4]{2})$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{9.5cm}
+
+\switchcolumn[0]*
+\textbf{9) UFRGS-2022} \\
+O valor de $\log(2^2) + \log(2^3) + \log(2^4) + \dots + \log(2^{50})$ é
+
+\begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+    \item $\log(2^{1247})$.
+    \item $\log(2^{1274})$.
+    \item $\log(2^{1472})$.
+    \item $\log(2^{59})$.
+    \item $\log(8^{59})$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\switchcolumn[0]*
+\textbf{10) UFRGS-2021} \\
+O valor de $\log\left(1 - \dfrac{1}{2}\right) + \log\left(1 - \dfrac{1}{3}\right) + \dots + \log\left(1 - \dfrac{1}{1000}\right)$ é
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $-3$.
+    \item $-2$.
+    \item $-1$.
+    \item $0$.
+    \item $1$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\switchcolumn[0]*
+\textbf{11) UFRGS-2021} \\
+Se $\log_2 x + (\log_2 x)^2 = 12$, então o valor de $x$ é
+
+\begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+    \item $8 \text{ ou } \dfrac{1}{16}$.
+    \item $\dfrac{1}{8} \text{ ou } 16$.
+    \item $-4 \text{ ou } 3$.
+    \item $4 \text{ ou } -3$.
+    \item $2^{12}$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\switchcolumn[0]*
+\textbf{12) UFRGS-2019} \\
+A concentração de alguns medicamentos no organismo está relacionada com a meia-vida, ou seja, o tempo necessário para que a quantidade inicial do medicamento no organismo seja reduzida pela metade.
+
+Considere que a meia-vida de determinado medicamento é de 6 horas. Sabendo que um paciente ingeriu 120 mg desse medicamento às 10 horas, assinale a alternativa que representa a melhor aproximação para a concentração desse medicamento, no organismo desse paciente, às 16 horas do dia seguinte.
+
+\begin{enumerate}[label=(\Alph*)]
+    \item 2,75 mg.
+    \item 3 mg.
+    \item 3,75 mg.
+    \item 4 mg.
+    \item 4,25 mg.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{8.5cm}
+
+\switchcolumn[0]*
+\textbf{13) UFRGS-2019} \\
+Se $\log 2 = x$ e $\log 3 = y$, então $\log 288$ é
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $2x + 5y$.
+    \item $5x + 2y$.
+    \item $10xy$.
+    \item $x^2 + y^2$.
+    \item $x^2 - y^2$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\switchcolumn[0]*
+\textbf{14) UFRGS-2018} \\
+Sendo $a$ e $b$ números reais positivos quaisquer, considere as afirmações abaixo.
+
+\begin{enumerate}[label=\Roman*., itemsep=0.2cm]
+    \item Se $a > b$ então $a^x > b^x$, para qualquer $x \in \mathbf{R}$.
+    \item Se $a > b > 1$, então $\dfrac{1}{a} < \dfrac{2}{a+b} < \dfrac{1}{b}$.
+    \item Se $a > b$, então $\sqrt{a} > \sqrt{b}$.
+\end{enumerate}
+
+Quais estão corretas?
+
+\begin{enumerate}[label=(\Alph*)]
+    \item Apenas I.
+    \item Apenas II.
+    \item Apenas I e III.
+    \item Apenas II e III.
+    \item I, II e III.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{7.5cm}
+
+\switchcolumn[0]*
+\textbf{15) UFRGS-2018} \\
+Dadas as funções reais de variável real $f$ e $g$, definidas por $f(x) = -\log_2(x)$ e $g(x) = x^2 - 4$, pode-se afirmar que $f(x) = g(x)$ é verdadeiro para um valor de $x$ localizado no intervalo
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $[0; 1]$.
+    \item $[1; 2]$.
+    \item $[2; 3]$.
+    \item $[3; 4]$.
+    \item $[4; 5]$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\switchcolumn[0]*
+\textbf{16) UFRGS-2018} \\
+Considere a função real de variável real $f(x) = 2^{x-1}$. Com relação à $f(x)$, é correto afirmar que
+
+\begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+    \item se $x < 1$, então $f(x) < 0$.
+    \item se $x \ge 1$, então $f(x) \le 1$.
+    \item a função $f(x)$ é decrescente para $x < 0$ e crescente para $x \ge 0$.
+    \item os valores das imagens de $f(x): A \rightarrow \mathbf{R}$, em que $A = \{x \in \mathbf{N} / x \ge 0\}$, formam uma progressão aritmética.
+    \item os valores das imagens de $f(x): A \rightarrow \mathbf{R}$, em que $A = \{x \in \mathbf{N} / x \ge 0\}$, formam uma progressão geométrica.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{8.5cm}
+
+\switchcolumn[0]*
+\textbf{17) UFRGS-2018} \\
+O valor de \\
+$E = \log\left(\dfrac{1}{2}\right) + \log\left(\dfrac{2}{3}\right) + \dots + \log\left(\dfrac{999}{1000}\right)$ é
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $-3$.
+    \item $-2$.
+    \item $-1$.
+    \item $0$.
+    \item $1$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\switchcolumn[0]*
+\textbf{18) UFRGS-2017} \\
+Considere a função real $f$ definida por $f(x) = 2^{-x}$. O valor da expressão $S = f(0) + f(1) + f(2) + \dots + f(100)$ é
+
+\begin{enumerate}[label=(\Alph*), itemsep=0.3cm]
+    \item $S = 2 - 2^{-101}$.
+    \item $S = 2^{50} + 2^{-50}$.
+    \item $S = 2 + 2^{-101}$.
+    \item $S = 2 + 2^{-100}$.
+    \item $S = 2 - 2^{-100}$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{8cm}
+
+\switchcolumn[0]*
+\textbf{19) UFRGS-2017} \\
+Se $\log_3 x + \log_9 x = 1$, então o valor de $x$ é
+
+\begin{enumerate}[label=(\Alph*), itemsep=0.3cm]
+    \item $\sqrt[3]{2}$.
+    \item $\sqrt{2}$.
+    \item $\sqrt[3]{3}$.
+    \item $\sqrt{3}$.
+    \item $\sqrt[3]{9}$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{8cm}
+
+\switchcolumn[0]*
+\textbf{20) UFRGS-2017} \\
+Leia o texto abaixo, sobre terremotos.
+
+Magnitude é uma medida quantitativa do tamanho do terremoto. Ela está relacionada com a energia sísmica liberada no foco e também com a amplitude das ondas registradas pelos sismógrafos. Para cobrir todos os tamanhos de terremotos, desde os microtremores de magnitudes negativas até os grandes terremotos com magnitudes superiores a 8.0, foi idealizada uma escala logarítmica, sem limites. No entanto, a própria natureza impõe um limite superior a esta escala, já que ela está condicionada ao próprio limite de resistência das rochas da crosta terrestre. Magnitude e energia podem ser relacionadas pela fórmula descrita por Gutenberg e Richter em 1935: $\log(E) = 11{,}8 + 1{,}5M$ onde: $E =$ energia liberada em \textit{Erg} ; $M =$ magnitude do terremoto.
+
+\begin{flushright}
+\footnotesize
+\textbf{Disponível em: <http://www.iag.usp.br/siae98/terremoto/terremotos.htm>.} \\
+\textbf{Acesso em: 20 set. 2017.}
+\end{flushright}
+\vspace{0.2cm}
+
+Sabendo que o terremoto que atingiu o México em setembro de 2017 teve magnitude 8,2, assinale a alternativa que representa a melhor aproximação para a energia liberada por esse terremoto, em \textit{Erg}.
+
+\begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+    \item $13{,}3$
+    \item $20$
+    \item $24$
+    \item $10^{24}$
+    \item $10^{28}$
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{12cm}
+
+\switchcolumn[0]*
+\textbf{21) UFRGS-2016} \\
+Se $\log_5 x = 2$ e $\log_{10} y = 4$, então $\log_{20} \dfrac{y}{x}$ é
+
+\begin{enumerate}[label=(\Alph*)]
+    \item 2.
+    \item 4.
+    \item 6.
+    \item 8.
+    \item 10.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\switchcolumn[0]*
+\textbf{22) UFRGS-2016} \\
+No estudo de uma população de bactérias, identificou-se que o número $N$ de bactérias, $t$ horas após o início do estudo, é dado por $N(t) = 20 \cdot 2^{1{,}5t}$.
+
+Nessas condições, em quanto tempo a população de mosquitos duplicou?
+
+\begin{enumerate}[label=(\Alph*)]
+    \item 15 min.
+    \item 20 min.
+    \item 30 min.
+    \item 40 min.
+    \item 45 min.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{7cm}
+
+\switchcolumn[0]*
+\textbf{23) UFRGS-2015} \\
+Se $10^x = 20^y$, atribuindo $0{,}3$ para $\log 2$, então o valor de $\dfrac{x}{y}$ é
+
+\begin{enumerate}[label=(\Alph*)]
+    \item 0,3.
+    \item 0,5.
+    \item 0,7.
+    \item 1.
+    \item 1,3.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\switchcolumn[0]*
+\textbf{24) UFRGS-2015} \\
+Considere a função $f$ definida por $f(x) = 1 - 5 \cdot 0{,}7^x$ e representada em um sistema de coordenadas cartesianas.
+
+Entre os gráficos abaixo, o que pode representar a função $f$ é
+
+\vspace{0.4cm}
+\begin{tabular}{@{}ll@{}}
+(A) \begin{tikzpicture}[scale=0.35, baseline=-0.5ex]
+    \draw[->, thick] (-2,0) -- (4,0) node[below] {\tiny $x$};
+    \draw[->, thick] (0,-4) -- (0,3) node[left] {\tiny $y$};
+    \node[below left] at (0,0) {\tiny $0$};
+    \draw[domain=-1.2:3.5, smooth, variable=\x, thick] plot ({\x}, {1.5 - 2*exp(-1.2*\x)});
+\end{tikzpicture} &
+(B) \begin{tikzpicture}[scale=0.35, baseline=-0.5ex]
+    \draw[->, thick] (-1,0) -- (4,0) node[below] {\tiny $x$};
+    \draw[->, thick] (0,-1) -- (0,4) node[left] {\tiny $y$};
+    \node[below left] at (0,0) {\tiny $0$};
+    \draw[domain=-0.8:3.5, smooth, variable=\x, thick] plot ({\x}, {0.2 + 2.5*exp(-1.5*\x)});
+\end{tikzpicture} \\[1cm]
+(C) \begin{tikzpicture}[scale=0.35, baseline=-0.5ex]
+    \draw[->, thick] (-3,0) -- (4,0) node[below] {\tiny $x$};
+    \draw[->, thick] (0,-3) -- (0,3) node[left] {\tiny $y$};
+    \node[below left] at (0,0) {\tiny $0$};
+    \draw[domain=-1.5:3.5, smooth, variable=\x, thick] plot ({\x}, {-1.5 + 0.8*exp(-1.2*\x)});
+\end{tikzpicture} &
+(D) \begin{tikzpicture}[scale=0.35, baseline=-0.5ex]
+    \draw[->, thick] (-3,0) -- (4,0) node[below] {\tiny $x$};
+    \draw[->, thick] (0,-3) -- (0,3) node[left] {\tiny $y$};
+    \node[below left] at (0,0) {\tiny $0$};
+    \draw[domain=-1.5:3.5, smooth, variable=\x, thick] plot ({\x}, {1.5 - 0.4*exp(-1.2*\x)});
+\end{tikzpicture} \\[1cm]
+(E) \begin{tikzpicture}[scale=0.35, baseline=-0.5ex]
+    \draw[->, thick] (-2,0) -- (4,0) node[below] {\tiny $x$};
+    \draw[->, thick] (0,-3) -- (0,3) node[left] {\tiny $y$};
+    \node[below left] at (0,0) {\tiny $0$};
+    \draw[thick] plot[smooth, tension=0.7] coordinates {(-1.5, 3) (-0.5, 0) (0, -1) (1, -1.5) (3, -0.5) (4, -0.2)};
+\end{tikzpicture} &
+\end{tabular}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{16cm}
+
+\switchcolumn[0]*
+\textbf{25) UFRGS-2014} \\
+A expressão $(0{,}125)^{15}$ é equivalente a
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $5^{45}$.
+    \item $5^{-45}$.
+    \item $2^{45}$.
+    \item $2^{-45}$.
+    \item $(-2)^{45}$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\switchcolumn[0]*
+\textbf{26) UFRGS-2014} \\
+O algarismo das unidades de $9^{99} - 4^{44}$ é
+
+\begin{enumerate}[label=(\Alph*)]
+    \item 1.
+    \item 2.
+    \item 3.
+    \item 4.
+    \item 5.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\switchcolumn[0]*
+\textbf{27) UFRGS-2014} \\
+Por qual potência de $10$ deve ser multiplicado o número $10^{-3} \cdot 10^{-3} \cdot 10^{-3} \cdot 10^{-3}$ para que esse produto seja igual a $10$?
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $10^9$.
+    \item $10^{10}$.
+    \item $10^{11}$.
+    \item $10^{12}$.
+    \item $10^{13}$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\switchcolumn[0]*
+\textbf{28) UFRGS-2014} \\
+Atribuindo para $\log 2$ o valor $0{,}3$, então o valor de $100^{0{,}3}$ é
+
+\begin{enumerate}[label=(\Alph*)]
+    \item 3.
+    \item 4.
+    \item 8.
+    \item 10.
+    \item 33.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\switchcolumn[0]*
+\textbf{29) UFRGS-2014} \\
+O número $N$ de peixes em um lago pode ser estimado utilizando a função $N$, definida por $N(t) = 500 \cdot 1{,}02^t$, em que $t$ é o tempo medido em meses.
+
+Pode-se, então, estimar que a população de peixes no lago, a cada mês,
+
+\begin{enumerate}[label=(\Alph*)]
+    \item cresce $0{,}2\%$.
+    \item cresce $2\%$.
+    \item cresce $20\%$.
+    \item decresce $2\%$.
+    \item decresce $20\%$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{7cm}
+
+\switchcolumn[0]*
+\textbf{30) UFRGS-2012} \\
+O algarismo das unidades da soma $44^{54} + 55^{45}$ é
+
+\begin{enumerate}[label=(\Alph*)]
+    \item 0.
+    \item 1.
+    \item 2.
+    \item 3.
+    \item 4.
+    \item 5.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\switchcolumn[0]*
+\textbf{31) UFRGS-2012} \\
+Dez bactérias são cultivadas para uma experiência, e o número de bactérias dobra a cada 12 horas.
+
+Tomando como aproximação para $\log 2$ o valor $0{,}3$, decorrida exatamente uma semana, o número de bactérias está entre
+
+\begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+    \item $10^{4{,}5} \text{ e } 10^5$.
+    \item $10^5 \text{ e } 10^{5{,}5}$.
+    \item $10^{5{,}5} \text{ e } 10^6$.
+    \item $10^6 \text{ e } 10^{6{,}5}$.
+    \item $10^{6{,}5} \text{ e } 10^7$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{7cm}
+
+\switchcolumn[0]*
+\textbf{32) UFRGS-2011} \\
+O número $\log_2 7$ está entre
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $0 \text{ e } 1$.
+    \item $1 \text{ e } 2$.
+    \item $2 \text{ e } 3$.
+    \item $3 \text{ e } 4$.
+    \item $4 \text{ e } 5$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\switchcolumn[0]*
+\textbf{33) UFRGS-2011} \\
+Considere a função $f$ tal que $f(x) = k + \left(\dfrac{5}{4}\right)^{2x-1}$, com $k > 0$.
+
+Assinale a alternativa correspondente ao gráfico que pode representar a função $f$.
+
+\vspace{0.4cm}
+\begin{tabular}{@{}ll@{}}
+(A) \begin{tikzpicture}[scale=0.35, baseline=-0.5ex]
+    \draw[->, thick] (-3,0) -- (3,0) node[below] {\tiny $x$};
+    \draw[->, thick] (0,-1) -- (0,5) node[left] {\tiny $y$};
+    \node[below left] at (0,0) {\tiny $0$};
+    \draw[gray!60, dashed] (-3,1.2) -- (3,1.2);
+    \draw[domain=-3:2.2, smooth, variable=\x, thick] plot ({\x}, {1.2 + 0.5*exp(0.9*\x)});
+\end{tikzpicture} &
+(B) \begin{tikzpicture}[scale=0.35, baseline=-0.5ex]
+    \draw[->, thick] (-3,0) -- (3,0) node[below] {\tiny $x$};
+    \draw[->, thick] (0,-2) -- (0,5) node[left] {\tiny $y$};
+    \node[below left] at (0,0) {\tiny $0$};
+    \draw[gray!60, dashed] (-3,-1) -- (3,-1);
+    \draw[domain=-3:2.3, smooth, variable=\x, thick] plot ({\x}, {-1 + 0.5*exp(1.1*\x)});
+\end{tikzpicture} \\[1cm]
+(C) \begin{tikzpicture}[scale=0.35, baseline=-0.5ex]
+    \draw[->, thick] (-3,0) -- (3,0) node[below] {\tiny $x$};
+    \draw[->, thick] (0,-2) -- (0,5) node[left] {\tiny $y$};
+    \node[below left] at (0,0) {\tiny $0$};
+    \draw[gray!60, dashed] (-3,-1) -- (3,-1);
+    \draw[domain=-2.3:3, smooth, variable=\x, thick] plot ({\x}, {-1 + 0.5*exp(-1.1*\x)});
+\end{tikzpicture} &
+(D) \begin{tikzpicture}[scale=0.35, baseline=-0.5ex]
+    \draw[->, thick] (-3,0) -- (3,0) node[below] {\tiny $x$};
+    \draw[->, thick] (0,-1) -- (0,5) node[left] {\tiny $y$};
+    \node[below left] at (0,0) {\tiny $0$};
+    \draw[gray!60, dashed] (-3,1.2) -- (3,1.2);
+    \draw[domain=-2.2:3, smooth, variable=\x, thick] plot ({\x}, {1.2 + 0.5*exp(-0.9*\x)});
+\end{tikzpicture} \\[1cm]
+(E) \begin{tikzpicture}[scale=0.35, baseline=-0.5ex]
+    \draw[->, thick] (-3,0) -- (3,0) node[below] {\tiny $x$};
+    \draw[->, thick] (0,-4) -- (0,3) node[left] {\tiny $y$};
+    \node[below left] at (0,0) {\tiny $0$};
+    \draw[gray!60, dashed] (-3,1) -- (3,1);
+    \draw[domain=-3:1.8, smooth, variable=\x, thick] plot ({\x}, {1 - 0.4*exp(1.2*\x)});
+\end{tikzpicture} &
+\end{tabular}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{16cm}
+
+\switchcolumn[0]*
+\textbf{34) UFRGS-2010} \\
+Aproximando $\log 2$ por $0{,}301$, verificamos que o número $16^{10}$ está entre
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $10^9 \text{ e } 10^{10}$.
+    \item $10^{10} \text{ e } 10^{11}$.
+    \item $10^{11} \text{ e } 10^{12}$.
+    \item $10^{12} \text{ e } 10^{13}$.
+    \item $10^{13} \text{ e } 10^{14}$.
+\end{enumerate}
+\vspace{0.4cm}
+
+\switchcolumn[1]
+\vspace{6cm}
+
+\end{paracol}
+
+\newpage
+% ---------------------------------------------------------
+% GABARITO
+% ---------------------------------------------------------
+\begin{center}
+    \rule{0.6\textwidth}{0.5pt} \\[0.3cm]
+    \textbf{\large GABARITO} \\[0.3cm]
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{1} & D & \textbf{2} & E & \textbf{3} & B & \textbf{4} & A \\ \hline
+        \textbf{5} & B & \textbf{6} & D & \textbf{7} & D & \textbf{8} & B \\ \hline
+        \textbf{9} & B & \textbf{10} & A & \textbf{11} & A & \textbf{12} & C \\ \hline
+        \textbf{13} & B & \textbf{14} & D & \textbf{15} & B & \textbf{16} & E \\ \hline
+        \textbf{17} & A & \textbf{18} & E & \textbf{19} & E & \textbf{20} & D \\ \hline
+        \textbf{21} & A & \textbf{22} & D & \textbf{23} & E & \textbf{24} & A \\ \hline
+        \textbf{25} & D & \textbf{26} & C & \textbf{27} & E & \textbf{28} & B \\ \hline
+        \textbf{29} & B & \textbf{30} & B & \textbf{31} & B & \textbf{32} & C \\ \hline
+        \textbf{33} & A & \textbf{34} & D & \multicolumn{4}{c|}{} \\ \hline
+    \end{tabular} \\[0.3cm]
+    \rule{0.6\textwidth}{0.5pt}
+\end{center}
+
+\end{document}
