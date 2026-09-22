@@ -1,0 +1,1095 @@
+\documentclass[11pt,a4paper]{article}
+
+% Pacotes de idioma e fontes
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+
+% Pacotes Matemáticos e Gráficos
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz} 
+\usetikzlibrary{calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% Pacotes de Layout
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{paracol} % Permite colunas paralelas independentes
+\usepackage{enumitem}
+
+% Definição Global de Macros Gráficas
+\newcommand{\match}[4]{
+    \draw[line width=1.5pt, draw=gray!80] (#1,#2) -- (#3,#4);
+    \fill[black!70] (#1,#2) circle (2pt);
+}
+
+% Configuração da linha divisória e larguras das colunas
+\setlength{\columnsep}{1cm} 
+\setlength{\columnseprule}{0.5pt}
+
+\begin{document}
+
+% Cabeçalho Centralizado
+\begin{center}
+    \textbf{\Large PEAC-2026 | MATEMÁTICA - EAD} \\[0.2cm]
+    \textbf{\large AULA 21-22 - Trigonometria} \\[0.2cm]
+    \textit{Questões de Vestibulares de anos anteriores (UFRGS).}
+\end{center}
+\vspace{0.5cm}
+
+% Início do ambiente de colunas paralelas
+\begin{paracol}{2}
+
+    % =========================================================
+    % QUESTÕES
+    % =========================================================
+
+    \switchcolumn[0]*
+    \textbf{1) UFRGS-2025} \\
+    Na figura abaixo, ABCD é um paralelogramo tal que suas diagonais medem $\overline{AC} = 16$ e $\overline{BD} = 10$ e formam um ângulo de $60^\circ$.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.7]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (6,0);
+            \coordinate (C) at (7,4);
+            \coordinate (D) at (1,4);
+            \coordinate (O) at (3.5,2);
+
+            \draw[thick] (A) -- (B) -- (C) -- (D) -- cycle;
+            \draw[thick] (A) -- (C);
+            \draw[thick] (B) -- (D);
+
+            \fill (A) circle (2pt) node[below left] {A};
+            \fill (B) circle (2pt) node[below right] {B};
+            \fill (C) circle (2pt) node[above right] {C};
+            \fill (D) circle (2pt) node[above left] {D};
+            \fill (O) circle (2pt);
+
+            % Arco do ângulo de 60 graus
+            \draw (O) ++(0.6, 0.34) arc (30:-38:0.7);
+            \node at (4.5, 1.8) {$60^\circ$};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    As medidas dos lados do paralelogramo ABCD são
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item 6 e 12.
+        \item 7 e 15.
+        \item 6 e $2\sqrt{17}$.
+        \item 7 e $\sqrt{129}$.
+        \item 9 e $\sqrt{129}$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{8.5cm}
+
+    \switchcolumn[0]*
+    \textbf{2) UFRGS-2024} \\
+    Na figura abaixo, $ABC$ é um triângulo equilátero de lado 6. O ponto $D$ é ponto médio do lado $\overline{AC}$, e a medida de $\overline{EB}$ é 2.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.8]
+            \coordinate (B) at (0,0);
+            \coordinate (C) at (6,0);
+            \coordinate (A) at (3,5.196);
+            \coordinate (E) at (1,1.732);
+            \coordinate (D) at (4.5,2.598);
+
+            \draw[thick] (A) -- (B) -- (C) -- cycle;
+            \draw[thick] (E) -- (D);
+
+            \fill (A) circle (2pt) node[above] {A};
+            \fill (B) circle (2pt) node[below left] {B};
+            \fill (C) circle (2pt) node[below right] {C};
+            \fill (E) circle (2pt) node[left] {E};
+            \fill (D) circle (2pt) node[right] {D};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    O perímetro do triângulo $AED$ é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $5 + \sqrt{5}$.
+        \item $7 + \sqrt{5}$.
+        \item $10 + \sqrt{5}$.
+        \item $7 + \sqrt{13}$.
+        \item $10 + \sqrt{13}$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{8.5cm}
+
+    \switchcolumn[0]*
+    \textbf{3) UFRGS-2022} \\
+    No retângulo ABCD, representado na figura abaixo, os três ângulos destacados com vértice em C são iguais.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.8]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (6,0);
+            \coordinate (C) at (6,3.464);
+            \coordinate (D) at (0,3.464);
+            \coordinate (E) at (4,0);
+
+            \fill[gray!70] (A) -- (E) -- (C) -- cycle;
+
+            \draw[thick] (A) -- (B) -- (C) -- (D) -- cycle;
+            \draw[thick] (A) -- (C);
+            \draw[thick] (E) -- (C);
+
+            \fill (A) circle (1.5pt) node[below left] {A};
+            \fill (B) circle (1.5pt) node[below right] {B};
+            \fill (C) circle (1.5pt) node[above right] {C};
+            \fill (D) circle (1.5pt) node[above left] {D};
+            \fill (E) circle (1.5pt) node[below] {E};
+
+            % Arcos em C indicando ângulos iguais
+            \draw (C) ++(-1,0) arc (180:210:1);
+            \draw (C) ++(-0.866,-0.5) arc (210:240:1);
+            \draw (C) ++(-0.5,-0.866) arc (240:270:1);
+
+            % Pequenos traços nos arcos
+            \draw (C) ++(195:0.9) -- ++(195:0.2);
+            \draw (C) ++(225:0.9) -- ++(225:0.2);
+            \draw (C) ++(255:0.9) -- ++(255:0.2);
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    A área do triângulo sombreado AEC, em relação à área total do retângulo, corresponde a
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $\dfrac{1}{2}$.
+        \item $\dfrac{1}{3}$.
+        \item $\dfrac{2}{5}$.
+        \item $\dfrac{3}{5}$.
+        \item $\dfrac{2}{3}$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{8.5cm}
+
+    \switchcolumn[0]*
+    \textbf{4) UFRGS-2022} \\
+    Na figura abaixo, o triângulo ABC é equilátero de lado 4. O ponto D pertence ao lado AB, o ponto E pertence ao lado BC, o ponto F pertence ao lado AC, e os segmentos AD, BE e CF têm medida $x$.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.2]
+            \coordinate (A) at (0,0);
+            \coordinate (B) at (4,0);
+            \coordinate (C) at (2,3.464);
+
+            % x assumido como 1 (1/4 do lado 4) para o desenho
+            \coordinate (D) at (1,0);
+            \coordinate (E) at (3.5, 0.866);
+            \coordinate (F) at (1.5, 2.598);
+
+            \draw[thick] (A) -- (B) -- (C) -- cycle;
+            \draw[thick] (D) -- (E) -- (F) -- cycle;
+
+            \fill (A) circle (1.5pt) node[left] {A};
+            \fill (B) circle (1.5pt) node[right] {B};
+            \fill (C) circle (1.5pt) node[above] {C};
+            \fill (D) circle (1.5pt) node[below] {D};
+            \fill (E) circle (1.5pt) node[right] {E};
+            \fill (F) circle (1.5pt) node[left] {F};
+
+            % Indicador de medida x
+            \draw[|-|] (0,-0.4) -- (1,-0.4) node[midway, below] {$x$};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    A função $A(x)$ que expressa a área do triângulo equilátero DEF, para $0 \le x \le 4$, é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $A(x) = \dfrac{\sqrt{3}}{2}(3x^2 - 6x + 8)$.
+        \item $A(x) = \dfrac{\sqrt{3}}{2}(3x^2 + 12x + 16)$.
+        \item $A(x) = -\dfrac{\sqrt{3}}{4}(3x^2 + 12x - 16)$.
+        \item $A(x) = \dfrac{\sqrt{3}}{4}(3x^2 + 12x + 16)$.
+        \item $A(x) = \dfrac{\sqrt{3}}{4}(3x^2 - 12x + 16)$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{8.5cm}
+
+    \switchcolumn[0]*
+    \textbf{5) UFRGS-2021} \\
+    Na figura abaixo, há três quadrados de lados 9, 6 e $x$ justapostos; os vértices A, B, C e D são colineares; os vértices A, E, F, G e H são colineares.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.25]
+            \coordinate (H) at (0,0);
+            \coordinate (G) at (9,0);
+            \coordinate (F) at (15,0);
+            \coordinate (E) at (19,0);
+            \coordinate (A) at (27,0);
+
+            \coordinate (D) at (9,9);
+            \coordinate (C) at (15,6);
+            \coordinate (B) at (19,4);
+
+            % Reta inferior
+            \draw[thick] (-2,0) -- (28,0);
+
+            % Reta superior
+            \draw[thick] (-2, 14.5) -- (28,-0.5);
+
+            % Quadrados
+            \draw[thick] (0,0) -- (9,0) -- (9,9) -- (0,9) -- cycle;
+            \draw[thick] (9,0) -- (15,0) -- (15,6) -- (9,6) -- cycle;
+            \draw[thick] (15,0) -- (19,0) -- (19,4) -- (15,4) -- cycle;
+
+            % Vértices dos quadrados sem label na reta superior
+            \fill (0,9) circle (5pt);
+            \fill (9,6) circle (5pt);
+            \fill (15,4) circle (5pt);
+
+            % Vértices colineares (letras)
+            \fill (A) circle (5pt) node[right] {A};
+            \fill (B) circle (5pt) node[above right] {B};
+            \fill (C) circle (5pt) node[above right] {C};
+            \fill (D) circle (5pt) node[above right] {D};
+
+            \fill (H) circle (5pt) node[above right] {H};
+            \fill (G) circle (5pt) node[above right] {G};
+            \fill (F) circle (5pt) node[above right] {F};
+            \fill (E) circle (5pt) node[above right] {E};
+
+            % Medidas
+            \node at (4.5, -1.5) {9};
+            \node at (12, -1.5) {6};
+            \node at (17, -1.5) {x};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    A soma das áreas dos três quadrados é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item 38.
+        \item 76.
+        \item 126.
+        \item 133.
+        \item 136.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{8.5cm}
+
+    \switchcolumn[0]*
+    \textbf{6) UFRGS-2019} \\
+    Na figura abaixo, tem-se um retângulo ABCD, de lados $\overline{AB} = 3$ e $\overline{AD} = 5$, e um triângulo equilátero BEC, construído sobre o lado $\overline{BC}$.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.6]
+            \coordinate (D) at (0,0);
+            \coordinate (C) at (3,0);
+            \coordinate (B) at (3,5);
+            \coordinate (A) at (0,5);
+            \coordinate (E) at (7.33, 2.5);
+
+            \draw[thick] (A) -- (B) -- (C) -- (D) -- cycle;
+            \draw[thick] (B) -- (E) -- (C);
+            \draw[thick] (D) -- (E);
+
+            \fill (A) circle (2pt) node[above left] {A};
+            \fill (B) circle (2pt) node[above right] {B};
+            \fill (C) circle (2pt) node[below right] {C};
+            \fill (D) circle (2pt) node[below left] {D};
+            \fill (E) circle (2pt) node[right] {E};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    A medida de $\overline{DE}$ é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $\sqrt{34 + 15\sqrt{2}}$.
+        \item $\sqrt{34 - 15\sqrt{3}}$.
+        \item $7$.
+        \item $\sqrt{19}$.
+        \item $\sqrt{34 + 15\sqrt{3}}$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{8.5cm}
+
+    \switchcolumn[0]*
+    \textbf{7) UFRGS-2019} \\
+    Considere dois círculos de centros A e C, raio 1 e tangentes entre si. O segmento $\overline{AC}$ é diagonal do quadrado ABCD. Os círculos de centros B e D são tangentes aos círculos de centros A e C, como mostra a figura abaixo.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.5]
+            \coordinate (A) at (0,0);
+            \coordinate (C) at (2,0);
+            \coordinate (B) at (1,1);
+            \coordinate (D) at (1,-1);
+
+            % Círculos maiores
+            \draw[thick] (A) circle (1);
+            \draw[thick] (C) circle (1);
+
+            % Círculos menores
+            \draw[thick] (B) circle (0.414);
+            \draw[thick] (D) circle (0.414);
+
+            % Quadrado
+            \draw[thick] (A) -- (B) -- (C) -- (D) -- cycle;
+
+            % Diagonal
+            \draw[thick, dashed] (A) -- (C);
+
+            \fill (A) circle (1pt) node[left] {A};
+            \fill (C) circle (1pt) node[right] {C};
+            \fill (B) circle (1pt) node[above] {B};
+            \fill (D) circle (1pt) node[below] {D};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    O raio dos círculos de centros B e D é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $\sqrt{2} - 1$.
+        \item $1$.
+        \item $2$.
+        \item $\sqrt{2} + 1$.
+        \item $2\sqrt{2}$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{8.5cm}
+
+    \switchcolumn[0]*
+    \textbf{8) UFRGS-2018} \\
+    Na circunferência de raio $1$, representada na figura a seguir, os pontos $M$ e $N$ são tais que o arco de extremidades $A$ e $M$ mede $\frac{\pi}{2}\,rad$ e o arco de extremidades $A$ e $N$ mede $-\frac{\pi}{3}\,rad$.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.5]
+            % Grid
+            \draw[help lines, color=gray!30, step=0.25] (-2.2,-2.2) grid (2.2,2.2);
+            \draw[help lines, color=gray!50, step=1] (-2.2,-2.2) grid (2.2,2.2);
+
+            % Eixos
+            \draw[->, color=black] (-2.2,0) -- (2.2,0) node[above left] {x};
+            \draw[->, color=black] (0,-2.2) -- (0,2.2) node[below right] {y};
+
+            % Circunferência
+            \draw[thick] (0,0) circle (1);
+
+            % Pontos
+            \coordinate (A) at (1,0);
+            \coordinate (M) at (0,1);
+            \coordinate (N) at (0.5, -0.866);
+
+            % Segmento MN
+            \draw[thick, dashed] (M) -- (N);
+
+            % Desenho dos pontos
+            \fill (A) circle (1.5pt) node[above right] {A};
+            \fill (M) circle (1.5pt) node[above right] {M};
+            \fill (N) circle (1.5pt) node[below right] {N};
+            \fill (0,0) circle (1.5pt) node[below left] {0};
+
+            % Rótulos dos eixos
+            \node[below] at (1,0) {1};
+            \node[below] at (2,0) {2};
+            \node[below] at (-1,0) {-1};
+            \node[below] at (-2,0) {-2};
+
+            \node[left] at (0,1) {1};
+            \node[left] at (0,2) {2};
+            \node[left] at (0,-1) {-1};
+            \node[left] at (0,-2) {-2};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    A distância entre os pontos $M$ e $N$ é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $\sqrt{2 - \sqrt{3}}$.
+        \item $2 - \sqrt{3}$.
+        \item $\sqrt{2 + \sqrt{3}}$.
+        \item $1$.
+        \item $2 + \sqrt{3}$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{8.5cm}
+
+    \switchcolumn[0]*
+    \textbf{9) UFRGS-2017} \\
+    Um ponto $A$, que se movimenta sobre uma circunferência, tem sua posição $p(t)$, considerada na vertical, no instante $t$, descrita pela relação $p(t) = 100 - 20sen(t)$, para $t \ge 0$. Nesse caso, a medida do diâmetro dessa circunferência é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item 30.
+        \item 40.
+        \item 50.
+        \item 80.
+        \item 120.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{6cm}
+
+    \switchcolumn[0]*
+    \textbf{10) UFRGS-2017} \\
+    Se $a$ e $b$ são ângulos agudos e complementares, o valor da expressão $sen^2(a+b) - \cos^2(a+b)$ é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item 0.
+        \item 1.
+        \item 2.
+        \item $\sqrt{2}$.
+        \item $\sqrt{3}$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{6cm}
+
+    \switchcolumn[0]*
+    \textbf{11) UFRGS-2016} \\
+    Considere um pentágono regular ABCDE de lado 1. Tomando os pontos médios de seus lados, constrói-se um pentágono FGHIJ, como na figura abaixo.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.5]
+            % Pentágono externo
+            \coordinate (D) at (90:1.5);
+            \coordinate (C) at (18:1.5);
+            \coordinate (B) at (-54:1.5);
+            \coordinate (A) at (-126:1.5);
+            \coordinate (E) at (162:1.5);
+
+            \draw[thick] (A) -- (B) coordinate[midway] (F)
+            -- (C) coordinate[midway] (G)
+            -- (D) coordinate[midway] (H)
+            -- (E) coordinate[midway] (I)
+            -- (A) coordinate[midway] (J);
+
+            \draw[thick] (F) -- (G) -- (H) -- (I) -- (J) -- cycle;
+
+            \node[below left] at (A) {A};
+            \node[below right] at (B) {B};
+            \node[right] at (C) {C};
+            \node[above] at (D) {D};
+            \node[left] at (E) {E};
+
+            \node[below] at (F) {F};
+            \node[right] at (G) {G};
+            \node[above right] at (H) {H};
+            \node[above left] at (I) {I};
+            \node[left] at (J) {J};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    A medida do lado do pentágono FGHIJ é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $sen\, 36^\circ$.
+        \item $cos\, 36^\circ$.
+        \item $\dfrac{sen\, 36^\circ}{2}$.
+        \item $\dfrac{cos\, 36^\circ}{2}$.
+        \item $2\, cos\, 36^\circ$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{8.5cm}
+
+    \switchcolumn[0]*
+    \textbf{12) UFRGS-2016} \\
+    Considere dois círculos concêntricos em um ponto O e de raios distintos; dois segmentos de reta $\overline{AB}$ e $\overline{CD}$ perpendiculares em O, como na figura abaixo.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.8]
+            \coordinate (O) at (0,0);
+
+            % Círculos
+            \draw[thick] (O) circle (0.6);
+            \draw[thick] (O) circle (1.8);
+
+            % Segmentos AB e CD (inclinados, perpendicular)
+            \coordinate (C) at (250:1.8);
+            \coordinate (D) at (70:1.8);
+            \coordinate (A) at (160:0.6);
+            \coordinate (B) at (-20:0.6);
+
+            \draw[thick] (C) -- (D);
+            \draw[thick] (A) -- (B);
+            \draw[thick] (A) -- (D);
+
+            \fill (O) circle (1.5pt) node[below=2pt, right=1pt] {O};
+            \node[left=2pt] at (A) {A};
+            \node[right=2pt] at (B) {B};
+            \node[below=2pt] at (C) {C};
+            \node[above=2pt] at (D) {D};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    Sabendo que o ângulo $A\hat{D}B$ mede $30^\circ$ e que o segmento $\overline{AD}$ mede 12, pode-se afirmar que os diâmetros dos círculos medem
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $12\, sen\, 15^\circ$ e $12\, cos\, 15^\circ$.
+        \item $12\, sen\, 75^\circ$ e $24\, cos\, 75^\circ$.
+        \item $12\, sen\, 75^\circ$ e $24\, sen\, 75^\circ$.
+        \item $24\, sen\, 15^\circ$ e $24\, cos\, 15^\circ$.
+        \item $24\, sen\, 75^\circ$ e $12\, cos\, 75^\circ$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{8.5cm}
+
+    \switchcolumn[0]*
+    \textbf{13) UFRGS-2016} \\
+    Em um triângulo $ABC$, $B\hat{A}C$ é o maior ângulo e $A\hat{C}B$ é o menor ângulo. A medida do ângulo $B\hat{A}C$ é $70^\circ$ maior que a medida de $A\hat{C}B$. A medida de $B\hat{A}C$ é o dobro da medida de $A\hat{B}C$. Portanto, as medidas dos ângulos são
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $20^\circ$, $70^\circ$ e $90^\circ$.
+        \item $20^\circ$, $60^\circ$ e $100^\circ$.
+        \item $10^\circ$, $70^\circ$ e $100^\circ$.
+        \item $30^\circ$, $50^\circ$ e $100^\circ$.
+        \item $30^\circ$, $60^\circ$ e $90^\circ$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{5cm}
+
+    \switchcolumn[0]*
+    \textbf{14) UFRGS-2015} \\
+    Um desenhista foi interrompido durante a realização de um trabalho, e seu desenho ficou como na figura abaixo.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.2]
+            \usetikzlibrary{calc}
+            % Arco base do círculo
+            \draw[gray, thick] (185:4) arc (185:275:4);
+
+            % Vértices na circunferência
+            \coordinate (P1) at (200:4);
+            \coordinate (P2) at (220:4);
+            \coordinate (P3) at (240:4);
+            \coordinate (P4) at (260:4);
+
+            % Terceiros vértices dos triângulos equiláteros
+            \coordinate (T1) at ($ (P1) ! 1 ! 60:(P2) $);
+            \coordinate (T2) at ($ (P2) ! 1 ! 60:(P3) $);
+            \coordinate (T3) at ($ (P3) ! 1 ! 60:(P4) $);
+
+            % Desenhando os três triângulos completos
+            \draw[thick, fill=gray!15] (P1) -- (P2) -- (T1) -- cycle;
+            \draw[thick, fill=gray!15] (P2) -- (P3) -- (T2) -- cycle;
+            \draw[thick, fill=gray!15] (P3) -- (P4) -- (T3) -- cycle;
+
+            % Continuações do lado esquerdo
+            \coordinate (P0) at (185:4);
+            \coordinate (T0) at ($ (P0) ! 1 ! 60:(P1) $);
+            \fill[gray!15] (P0) -- (P1) -- (T0) -- cycle;
+            \draw[thick] (P1) -- (T0);
+
+            % Arcos e textos de 40 graus
+            \begin{scope}
+                \clip (P1) -- (T0) -- (T1) -- cycle;
+                \draw (P1) circle (0.45);
+            \end{scope}
+            \node at ($ (P1) + (20:0.7) $) {$40^\circ$};
+
+            \begin{scope}
+                \clip (P2) -- (T1) -- (T2) -- cycle;
+                \draw (P2) circle (0.45);
+            \end{scope}
+            \node at ($ (P2) + (40:0.7) $) {$40^\circ$};
+
+            \begin{scope}
+                \clip (P3) -- (T2) -- (T3) -- cycle;
+                \draw (P3) circle (0.45);
+            \end{scope}
+            \node at ($ (P3) + (60:0.7) $) {$40^\circ$};
+
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    Se o desenho estivesse completo, ele seria um polígono regular composto por triângulos equiláteros não sobrepostos, com dois de seus vértices sobre um círculo, e formando um ângulo de $40^\circ$, como indicado na figura.
+
+    Quando a figura estiver completa, o número de triângulos equiláteros com dois de seus vértices sobre o círculo é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item 10.
+        \item 12.
+        \item 14.
+        \item 16.
+        \item 18.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{8cm}
+
+    \switchcolumn[0]*
+    \textbf{15) UFRGS-2015} \\
+    Considere o pentágono regular de lado 1 e duas de suas diagonais, conforme representado na figura abaixo.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.5]
+            \coordinate (A) at (90:1.5);
+            \coordinate (B) at (18:1.5);
+            \coordinate (C) at (-54:1.5);
+            \coordinate (D) at (-126:1.5);
+            \coordinate (E) at (162:1.5);
+
+            % Interseção das diagonais AD e EB
+            \coordinate (I) at (intersection of A--D and E--B);
+
+            % Preenchimento do polígono sombreado
+            \fill[gray!40] (A) -- (B) -- (I) -- cycle;
+
+            % Contorno do pentágono
+            \draw[thick] (A) -- (B) -- (C) -- (D) -- (E) -- cycle;
+
+            % Diagonais
+            \draw[thick] (A) -- (D);
+            \draw[thick] (E) -- (B);
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    A área do polígono sombreado é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $\dfrac{sen\, 36^\circ}{2}$.
+        \item $\dfrac{sen\, 72^\circ}{2}$.
+        \item $\dfrac{sen\, 72^\circ}{3}$.
+        \item $sen\, 36^\circ$.
+        \item $sen\, 72^\circ$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{7cm}
+
+    \switchcolumn[0]*
+    \textbf{16) UFRGS-2015} \\
+    Considere as funções $f$ e $g$ definidas por $f(x) = sen\, x$ e $g(x) = cos\, x$.
+
+    \vspace{0.3cm}
+    O número de raízes da equação $f(x) = g(x)$ no intervalo $[-2\pi, 2\pi]$ é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item 3.
+        \item 4.
+        \item 5.
+        \item 6.
+        \item 7.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{6cm}
+
+    \switchcolumn[0]*
+    \textbf{17) UFRGS-2014} \\
+    O gráfico da função $f$, definida por $f(x) = \cos x$, e o gráfico da função $g$, quando representados no mesmo sistema de coordenadas, possuem somente dois pontos em comum.
+
+    Assim, das alternativas abaixo, a que pode representar a função $g$ é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $g(x) = (sen\, x)^2 + (\cos x)^2$.
+        \item $g(x) = x^2$.
+        \item $g(x) = 2^x$.
+        \item $g(x) = \log x$.
+        \item $g(x) = sen\, x$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{6.5cm}
+
+    \switchcolumn[0]*
+    \textbf{18) UFRGS-2014} \\
+    O emblema de um super-herói tem a forma pentagonal, como representado na figura abaixo.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.25]
+            \coordinate (V) at (0,0);
+            \coordinate (R1) at (5, 8.66);
+            \coordinate (L1) at (-5, 8.66);
+            \coordinate (R2) at (4, 9.66);
+            \coordinate (L2) at (-4, 9.66);
+
+            \draw[thick] (V) -- (R1) -- (R2) -- (L2) -- (L1) -- cycle;
+
+            % Top dimension 8
+            \draw (L2) -- ++(0, 1.5);
+            \draw (R2) -- ++(0, 1.5);
+            \draw[<->] (-4, 10.66) -- (4, 10.66) node[midway, fill=white] {8};
+
+            % Right dimension 1
+            \draw (R2) -- ++(2, 0);
+            \draw (R1) -- ++(1, 0);
+            \draw[<->] (5.5, 8.66) -- (5.5, 9.66) node[midway, fill=white] {1};
+
+            % Left and right side 10
+            \draw (V) -- ++(-30:1.5);
+            \draw (R1) -- ++(-30:1.5);
+            \draw[<->] ($(V) + (-30:1)$) -- ($(R1) + (-30:1)$) node[midway, fill=white] {10};
+
+            \draw (V) -- ++(210:1.5);
+            \draw (L1) -- ++(210:1.5);
+            \draw[<->] ($(V) + (210:1)$) -- ($(L1) + (210:1)$) node[midway, fill=white] {10};
+
+            % Angle
+            \draw (V) ++(60:2) arc (60:120:2);
+            \node at (0, 3) {$60^\circ$};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    A área do emblema é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $9 + 5\sqrt{3}$.
+        \item $9 + 10\sqrt{3}$.
+        \item $9 + 25\sqrt{3}$.
+        \item $18 + 5\sqrt{3}$.
+        \item $18 + 25\sqrt{3}$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{9.5cm}
+
+    \switchcolumn[0]*
+    \textbf{19) UFRGS-2014} \\
+    Considere o hexágono regular ABCDEF, no qual foi traçado o segmento FD medindo $6\, cm$, representado na figura abaixo.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1]
+            % Vertices
+            \coordinate (A) at (-1, -1.732);
+            \coordinate (B) at (1, -1.732);
+            \coordinate (C) at (2, 0);
+            \coordinate (D) at (1, 1.732);
+            \coordinate (E) at (-1, 1.732);
+            \coordinate (F) at (-2, 0);
+
+            \draw[thick] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+            \draw[thick] (F) -- (D);
+
+            \node[below] at (A) {A};
+            \node[below] at (B) {B};
+            \node[right] at (C) {C};
+            \node[above] at (D) {D};
+            \node[above] at (E) {E};
+            \node[left] at (F) {F};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    A área do hexágono mede, em $cm^2$,
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $18\sqrt{3}$.
+        \item $20\sqrt{3}$.
+        \item $24\sqrt{3}$.
+        \item $28\sqrt{3}$.
+        \item $30\sqrt{3}$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{8cm}
+
+    \switchcolumn[0]*
+    \textbf{20) UFRGS-2014} \\
+    Considere o pentágono regular de lado 2 e duas de suas diagonais, conforme representado na figura abaixo.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.5]
+            % Geometric construction of pentagon
+            \def\R{1.7013}
+            \coordinate (P1) at (234:\R); % A
+            \coordinate (P2) at (306:\R); % B
+            \coordinate (P3) at (18:\R);  % C
+            \coordinate (P4) at (90:\R);  % Top
+            \coordinate (P5) at (162:\R); % Left
+
+            \draw[thick] (P1) -- (P2) -- (P3) -- (P4) -- (P5) -- cycle;
+
+            % Diagonals
+            \draw[thick] (P1) -- (P4);
+            \draw[thick] (P3) -- (P5);
+
+            % Intersection D
+            \coordinate (D) at (intersection of P1--P4 and P3--P5);
+
+            \node[below left] at (P1) {A};
+            \node[below right] at (P2) {B};
+            \node[right] at (P3) {C};
+            \node[above left] at (D) {D};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    A área do quadrilátero ABCD é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $sen\, 72^\circ$.
+        \item $sen\, 108^\circ$.
+        \item $2sen\, 72^\circ$.
+        \item $4sen\, 72^\circ$.
+        \item $4sen\, 108^\circ$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{7.5cm}
+
+    \switchcolumn[0]*
+    \textbf{21) UFRGS-2013} \\
+    Na figura abaixo, o retângulo ABCD tem lados que medem 6 e 9.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.6]
+            \coordinate (D) at (0,0);
+            \coordinate (C) at (9,0);
+            \coordinate (B) at (9,6);
+            \coordinate (A) at (0,6);
+            \coordinate (E) at (1,6);
+            \coordinate (F) at (8,0);
+
+            \fill[gray!40] (A) -- (E) -- (C) -- (F) -- cycle;
+
+            \draw[thick] (A) -- (B) -- (C) -- (D) -- cycle;
+            \draw[thick] (A) -- (F);
+            \draw[thick] (E) -- (C);
+
+            \node[above] at (A) {A};
+            \node[above] at (B) {B};
+            \node[right] at (C) {C};
+            \node[left] at (D) {D};
+
+            % Dimension 6
+            \draw (0, 6) -- (-0.7, 6);
+            \draw (0, 0) -- (-0.7, 0);
+            \draw[<->] (-0.5, 0) -- (-0.5, 6) node[midway, fill=white] {6};
+
+            % Dimension 9
+            \draw (0, 0) -- (0, -0.7);
+            \draw (9, 0) -- (9, -0.7);
+            \draw[<->] (0, -0.5) -- (9, -0.5) node[midway, fill=white] {9};
+
+            % Angle at top
+            \draw[green!50!black, thick] (2, 6) arc (0:-36.87:1);
+            \node at (2.4, 5.5) {$\alpha$};
+
+            % Angle at bottom
+            \draw[green!50!black, thick] (7, 0) arc (180:143.13:1);
+            \node at (6.6, 0.5) {$\alpha$};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    Se a área do paralelogramo sombreado é 6, o cosseno de $\alpha$ é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $\dfrac{3}{5}$.
+        \item $\dfrac{2}{3}$.
+        \item $\dfrac{3}{4}$.
+        \item $\dfrac{4}{5}$.
+        \item $\dfrac{8}{9}$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{8.5cm}
+
+    \switchcolumn[0]*
+    \textbf{22) UFRGS-2012} \\
+    A função $f$ é definida por $f(x) = sen\, 2x$ e $g$ é uma função cujo gráfico não intercepta o gráfico de $f$, quando representadas no mesmo sistema de coordenadas cartesianas.
+
+    Entre as alternativas que seguem, a única que pode representar $g(x)$ é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $sen\, x$.
+        \item $\log x$.
+        \item $|x|$.
+        \item $2x + 3$.
+        \item $3 + 2^x$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{6cm}
+
+    \switchcolumn[0]*
+    \textbf{23) UFRGS-2012} \\
+    Os lados de um losango medem 4 e um dos seus ângulos $30^\circ$. A medida da diagonal menor do losango é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $2\sqrt{2 - \sqrt{3}}$.
+        \item $\sqrt{2 + \sqrt{3}}$.
+        \item $4\sqrt{2 - \sqrt{3}}$.
+        \item $2\sqrt{2 + \sqrt{3}}$.
+        \item $4\sqrt{2 + \sqrt{3}}$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{6cm}
+
+    \switchcolumn[0]*
+    \textbf{24) UFRGS-2011} \\
+    O número de interseções da função $f(x) = sen\, 5x$ com o eixo das abscissas no intervalo $[-2\pi, 2\pi]$ é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item 10.
+        \item 14.
+        \item 21.
+        \item 24.
+        \item 27.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{6cm}
+
+    \switchcolumn[0]*
+    \textbf{25) UFRGS-2011} \\
+    Assinale a alternativa que apresenta corretamente os valores, na mesma unidade de medida, que podem representar as medidas dos lados de um triângulo.
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $1 - 2 - 4$
+        \item $3 - 2 - 6$
+        \item $8 - 4 - 3$
+        \item $3 - 9 - 4$
+        \item $6 - 4 - 5$
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{6cm}
+
+    \switchcolumn[0]*
+    \textbf{26) UFRGS-2010} \\
+    Dentre as opções a seguir, a que pode representar o gráfico da função definida por $f(x) = (sen\, x + \cos x)^2 + (sen\, x - \cos x)^2$ é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.4cm]
+        \item \raisebox{-0.5\height}{
+                  \begin{tikzpicture}[scale=0.5]
+                      \draw[->] (-2.5,0) -- (2.5,0) node[below] {\tiny x};
+                      \draw[->] (0,-1.5) -- (0,1.5) node[right] {\tiny y};
+                      \draw[thick, domain=-2.3:2.3, samples=100] plot (\x, {-cos(\x*200)*cos(\x*100)});
+                  \end{tikzpicture}
+              }
+        \item \raisebox{-0.5\height}{
+                  \begin{tikzpicture}[scale=0.5]
+                      \draw[->] (-2.5,0) -- (2.5,0) node[below] {\tiny x};
+                      \draw[->] (0,-1.5) -- (0,1.5) node[right] {\tiny y};
+                      \draw[thick] (-2.3, 0.8) -- (2.3, 0.8);
+                  \end{tikzpicture}
+              }
+        \item \raisebox{-0.5\height}{
+                  \begin{tikzpicture}[scale=0.5]
+                      \draw[->] (-2.5,0) -- (2.5,0) node[below] {\tiny x};
+                      \draw[->] (0,-1.5) -- (0,1.5) node[right] {\tiny y};
+                      \draw[thick] (-1.3, -1.3) -- (1.3, 1.3);
+                  \end{tikzpicture}
+              }
+        \item \raisebox{-0.5\height}{
+                  \begin{tikzpicture}[scale=0.5]
+                      \draw[->] (-2.5,0) -- (2.5,0) node[below] {\tiny x};
+                      \draw[->] (0,-1.5) -- (0,1.5) node[right] {\tiny y};
+                      \draw[thick, domain=-2.3:2.3, samples=100] plot (\x, {sin(\x*80)});
+                  \end{tikzpicture}
+              }
+        \item \raisebox{-0.5\height}{
+                  \begin{tikzpicture}[scale=0.5]
+                      \draw[->] (-2.5,0) -- (2.5,0) node[below] {\tiny x};
+                      \draw[->] (0,-1.5) -- (0,1.5) node[right] {\tiny y};
+                      \draw[thick] (1, -1.5) -- (1, 1.5);
+                  \end{tikzpicture}
+              }
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{15cm}
+
+    \switchcolumn[0]*
+    \textbf{27) UFRGS-2010} \\
+    Traçando os gráficos das funções $f$ e $g$ definidas por $f(x) = |sen\, x|$ e $g(x) = |\cos x|$, com $x$ variando no conjunto dos números reais de $-2\pi$ a $2\pi$, no mesmo sistema de coordenadas, o número de interseções é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item 7.
+        \item 8.
+        \item 9.
+        \item 10.
+        \item 12.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{5cm}
+
+\end{paracol}
+
+\vspace{1cm}
+
+% ---------------------------------------------------------
+% GABARITO
+% ---------------------------------------------------------
+\begin{center}
+    \rule{0.6\textwidth}{0.5pt} \\[0.3cm]
+    \textbf{\large GABARITO} \\[0.3cm]
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{1}  & D & \textbf{2}  & D & \textbf{3}  & B & \textbf{4}            & E \\ \hline
+        \textbf{5}  & D & \textbf{6}  & E & \textbf{7}  & A & \textbf{8}            & C \\ \hline
+        \textbf{9}  & B & \textbf{10} & B & \textbf{11} & B & \textbf{12}           & D \\ \hline
+        \textbf{13} & D & \textbf{14} & E & \textbf{15} & B & \textbf{16}           & B \\ \hline
+        \textbf{17} & B & \textbf{18} & C & \textbf{19} & A & \textbf{20}           & D \\ \hline
+        \textbf{21} & D & \textbf{22} & E & \textbf{23} & C & \textbf{24}           & C \\ \hline
+        \textbf{25} & E & \textbf{26} & B & \textbf{27} & B & \multicolumn{2}{c|}{}     \\ \hline
+    \end{tabular} \\[0.3cm]
+    \rule{0.6\textwidth}{0.5pt}
+\end{center}
+
+\end{document}
