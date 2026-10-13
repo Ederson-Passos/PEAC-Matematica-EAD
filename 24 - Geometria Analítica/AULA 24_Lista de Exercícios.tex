@@ -1,0 +1,532 @@
+\documentclass[11pt,a4paper]{article}
+
+% Pacotes de idioma e fontes
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+
+% Pacotes Matemáticos e Gráficos
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikz} 
+\usetikzlibrary{calc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% Pacotes de Layout
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{paracol} % Permite colunas paralelas independentes
+\usepackage{enumitem}
+
+% Definição Global de Macros Gráficas
+\newcommand{\match}[4]{
+    \draw[line width=1.5pt, draw=gray!80] (#1,#2) -- (#3,#4);
+    \fill[black!70] (#1,#2) circle (2pt);
+}
+
+% Configuração da linha divisória e larguras das colunas
+\setlength{\columnsep}{1cm} 
+\setlength{\columnseprule}{0.5pt}
+
+\begin{document}
+
+% Cabeçalho Centralizado
+\begin{center}
+    \textbf{\Large PEAC-2026 | MATEMÁTICA - EAD} \\[0.2cm]
+    \textbf{\large Geometria Analítica} \\[0.2cm]
+    \textit{Questões de Vestibulares de anos anteriores (UFRGS).}
+\end{center}
+\vspace{0.5cm}
+
+% Início do ambiente de colunas paralelas
+\begin{paracol}{2}
+
+    % =========================================================
+    % QUESTÕES
+    % =========================================================
+
+    \switchcolumn[0]*
+    \textbf{1) UFRGS-2025} \\
+    O gráfico da função $f(x) = x^2 - 2x + 3$ está representado no sistema de coordenadas cartesianas da figura abaixo. O vértice A do triângulo isósceles ABC está posicionado no vértice da parábola, e o vértice B está posicionado na origem do sistema de coordenadas cartesianas.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1]
+            % Eixos
+            \draw[->] (-1.5,0) -- (3.5,0) node[below] {$x$};
+            \draw[->] (0,-1) -- (0,5.5) node[right] {$y$};
+
+            % Preenchimento do triângulo
+            \fill[gray!50] (0,0) -- (2,0) -- (1,2) -- cycle;
+
+            % Lados do triângulo
+            \draw[thick, gray!50!black] (0,0) -- (2,0) -- (1,2) -- cycle;
+
+            % Parábola
+            \draw[thick, domain=-0.8:2.8, samples=100] plot (\x, {\x*\x - 2*\x + 3});
+
+            % Vértices
+            \fill (1,2) circle (2pt) node[above] {\textbf{A}};
+            \fill (0,0) circle (2pt) node[below left] {\textbf{B}};
+            \fill (2,0) circle (2pt) node[below right] {\textbf{C}};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    A área do triângulo ABC é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item 1.
+        \item 2.
+        \item 4.
+        \item 6.
+        \item 8.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{8.5cm}
+
+    \switchcolumn[0]*
+    \textbf{2) UFRGS-2019} \\
+    Considere os pontos A, B e C, de coordenadas inteiras, que determinam os vértices do triângulo ABC, representado no sistema de coordenadas cartesianas abaixo.
+
+    A revolução do triângulo ABC, em torno do eixo x, gera o sólido P, e a revolução do triângulo ABC, em torno do eixo y, gera o sólido Q.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.7]
+            % Eixos
+            \draw[->] (-1.5,0) -- (5.5,0) node[below] {x};
+            \draw[->] (0,-1.5) -- (0,6.5) node[left] {y};
+
+            % Ticks x
+            \foreach \x in {-1, 1, 2, 3, 4, 5}
+            \draw (\x, 0.1) -- (\x, -0.1) node[below] {\footnotesize \x};
+
+            % Ticks y
+            \foreach \y in {-1, 1, 2, 3, 4, 5, 6}
+            \draw (0.1, \y) -- (-0.1, \y) node[left] {\footnotesize \y};
+
+            \node[below left] at (0,0) {\footnotesize 0};
+
+            % Preenchimento do triângulo
+            \fill[gray!30] (0,6) -- (2,0) -- (4,0) -- cycle;
+
+            % Lados do triângulo
+            \draw[thick] (0,6) -- (2,0) -- (4,0) -- cycle;
+
+            % Vértices (letras)
+            \node[above right] at (0,6) {A};
+            \node[above left] at (2,0.1) {B};
+            \node[above right] at (4,0.1) {C};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    A razão entre os volumes de P e Q é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $\dfrac{2}{3}$.
+        \item $1$.
+        \item $\dfrac{3}{2}$.
+        \item $18$.
+        \item $36$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{10cm}
+
+    \switchcolumn[0]*
+    \textbf{3) UFRGS-2019} \\
+    A área da região determinada pela interseção das desigualdades $y > \dfrac{3}{2}x - \dfrac{3}{2}$, $y > -\dfrac{2}{3}x + 5$ e $(x - 3)^2 + (y - 3)^2 < 9$ é
+
+    \vspace{0.3cm}
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $\dfrac{3\pi}{4}$.
+        \item $\dfrac{3\pi}{2}$.
+        \item $\dfrac{9\pi}{4}$.
+        \item $\dfrac{9\pi}{2}$.
+        \item $9\pi$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{5cm}
+
+    \switchcolumn[0]*
+    \textbf{4) UFRGS-2019} \\
+    A área do quadrilátero formado pelos pontos de interseção da circunferência de equação $(x + 1)^2 + y^2 = 4$ com os eixos coordenados é
+
+    \vspace{0.3cm}
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $\sqrt{3}$.
+        \item $2\sqrt{3}$.
+        \item $3\sqrt{3}$.
+        \item $4\sqrt{3}$.
+        \item $12$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{5cm}
+
+    \switchcolumn[0]*
+    \textbf{5) UFRGS-2018} \\
+    A elipse de equação $\dfrac{x^2}{4} + \dfrac{y^2}{9} = 1$ está esboçada na imagem a seguir.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.8]
+            % Eixos
+            \draw[->] (-3,0) -- (3,0) node[above] {x};
+            \draw[->] (0,-4) -- (0,4) node[right] {y};
+
+            % Elipse
+            \draw[thick] (0,0) ellipse (2 and 3);
+
+            % Pontos
+            \fill (0,3) circle (2pt) node[above right] {A};
+            \fill (2,0) circle (2pt) node[above right] {B};
+            \fill (0,-3) circle (2pt) node[below right] {C};
+            \fill (-2,0) circle (2pt) node[above left] {D};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    A área do quadrilátero $ABCD$ é
+
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item 4.
+        \item 9.
+        \item 12.
+        \item 24.
+        \item 36.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{9.5cm}
+
+    \switchcolumn[0]*
+    \textbf{6) UFRGS-2018} \\
+    A menor distância entre as circunferências de equação $(x - 1)^2 + (y - 2)^2 = 1$ e $(x + 2)^2 + (y - 1)^2 = 1$ é
+
+    \vspace{0.3cm}
+    \begin{enumerate}[label=(\Alph*), itemsep=0.2cm]
+        \item $2$.
+        \item $5$.
+        \item $\sqrt{10}$.
+        \item $\sqrt{10} + 2$.
+        \item $\sqrt{10} - 2$.
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{5cm}
+
+    \switchcolumn[0]*
+    \textbf{7) UFRGS-2017} \\
+    Considere a região delimitada pelas inequações $x + y \ge 1$ e $x^2 + y^2 \le 4$, representadas em um mesmo sistema de coordenadas cartesianas.
+
+    Assinale a alternativa que contém o gráfico que melhor representa essa região.
+
+    \vspace{0.3cm}
+    \begin{enumerate}[label=(\Alph*), itemsep=0.4cm]
+        \item \raisebox{-0.5\height}{
+                  \begin{tikzpicture}[scale=0.4]
+                      \fill[gray!50] (-24.295:2) arc (-24.295:114.295:2) -- cycle;
+                      \draw[thick] (-24.295:2) arc (-24.295:114.295:2) -- cycle;
+                      \fill[gray!50] (155.705:2) arc (155.705:294.295:2) -- cycle;
+                      \draw[thick] (155.705:2) arc (155.705:294.295:2) -- cycle;
+
+                      \draw[->] (-3.5,0) -- (4.2,0) node[above left, inner sep=1pt] {\scriptsize x};
+                      \draw[->] (0,-3.5) -- (0,4.6);
+                      \node[right] at (0,4.2) {\scriptsize y};
+                      \foreach \i in {-3,-2,-1,1,2,3} \draw (\i,0.1) -- (\i,-0.1) node[below] {\tiny \i};
+                      \foreach \i in {-3,-2,-1,1,2,3,4} \draw (0.1,\i) -- (-0.1,\i) node[left] {\tiny \i};
+                      \node[below left, inner sep=1.5pt] at (0,0) {\tiny 0};
+                  \end{tikzpicture}
+              }
+        \item \raisebox{-0.5\height}{
+                  \begin{tikzpicture}[scale=0.4]
+                      \fill[gray!50] (2,0) arc (0:180:2) -- cycle;
+                      \draw[thick] (2,0) arc (0:180:2) -- cycle;
+
+                      \draw[->] (-3.5,0) -- (4.2,0) node[above left, inner sep=1pt] {\scriptsize x};
+                      \draw[->] (0,-3.5) -- (0,4.6);
+                      \node[right] at (0,4.2) {\scriptsize y};
+                      \foreach \i in {-3,-2,-1,1,2,3} \draw (\i,0.1) -- (\i,-0.1) node[below] {\tiny \i};
+                      \foreach \i in {-3,-2,-1,1,2,3,4} \draw (0.1,\i) -- (-0.1,\i) node[left] {\tiny \i};
+                      \node[below left, inner sep=1.5pt] at (0,0) {\tiny 0};
+                  \end{tikzpicture}
+              }
+        \item \raisebox{-0.5\height}{
+                  \begin{tikzpicture}[scale=0.4]
+                      \fill[gray!50] (155.705:2) arc (155.705:294.295:2) -- cycle;
+                      \draw[thick] (155.705:2) arc (155.705:294.295:2) -- cycle;
+
+                      \draw[->] (-3.5,0) -- (4.2,0) node[above left, inner sep=1pt] {\scriptsize x};
+                      \draw[->] (0,-3.5) -- (0,4.6);
+                      \node[right] at (0,4.2) {\scriptsize y};
+                      \foreach \i in {-3,-2,-1,1,2,3} \draw (\i,0.1) -- (\i,-0.1) node[below] {\tiny \i};
+                      \foreach \i in {-3,-2,-1,1,2,3,4} \draw (0.1,\i) -- (-0.1,\i) node[left] {\tiny \i};
+                      \node[below left, inner sep=1.5pt] at (0,0) {\tiny 0};
+                  \end{tikzpicture}
+              }
+        \item \raisebox{-0.5\height}{
+                  \begin{tikzpicture}[scale=0.4]
+                      \fill[gray!50] (-2,0) arc (180:360:2) -- cycle;
+                      \draw[thick] (-2,0) arc (180:360:2) -- cycle;
+
+                      \draw[->] (-3.5,0) -- (4.2,0) node[above left, inner sep=1pt] {\scriptsize x};
+                      \draw[->] (0,-3.5) -- (0,4.6);
+                      \node[right] at (0,4.2) {\scriptsize y};
+                      \foreach \i in {-3,-2,-1,1,2,3} \draw (\i,0.1) -- (\i,-0.1) node[below] {\tiny \i};
+                      \foreach \i in {-3,-2,-1,1,2,3,4} \draw (0.1,\i) -- (-0.1,\i) node[left] {\tiny \i};
+                      \node[below left, inner sep=1.5pt] at (0,0) {\tiny 0};
+                  \end{tikzpicture}
+              }
+        \item \raisebox{-0.5\height}{
+                  \begin{tikzpicture}[scale=0.4]
+                      \fill[gray!50] (-24.295:2) arc (-24.295:114.295:2) -- cycle;
+                      \draw[thick] (-24.295:2) arc (-24.295:114.295:2) -- cycle;
+
+                      \draw[->] (-3.5,0) -- (4.2,0) node[above left, inner sep=1pt] {\scriptsize x};
+                      \draw[->] (0,-3.5) -- (0,4.6);
+                      \node[right] at (0,4.2) {\scriptsize y};
+                      \foreach \i in {-3,-2,-1,1,2,3} \draw (\i,0.1) -- (\i,-0.1) node[below] {\tiny \i};
+                      \foreach \i in {-3,-2,-1,1,2,3,4} \draw (0.1,\i) -- (-0.1,\i) node[left] {\tiny \i};
+                      \node[below left, inner sep=1.5pt] at (0,0) {\tiny 0};
+                  \end{tikzpicture}
+              }
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{22cm}
+
+    \switchcolumn[0]*
+    \textbf{8) UFRGS-2017} \\
+    Considere o lugar geométrico dos pontos $P = (x, y)$ que distam 3 unidades do ponto $Q = (2, 3)$.
+
+    Assinale, entre as alternativas, o gráfico que pode representar esse lugar geométrico.
+
+    \vspace{0.3cm}
+    \begin{enumerate}[label=(\Alph*), itemsep=0.4cm]
+        \item \raisebox{-0.5\height}{
+                  \begin{tikzpicture}[scale=0.4]
+                      \draw[thick] (2,3) circle (3);
+                      \draw[->] (-2.5,0) -- (6.5,0) node[above left, inner sep=1pt] {\scriptsize x};
+                      \draw[->] (0,-2.5) -- (0,7.6);
+                      \node[right] at (0,7.2) {\scriptsize y};
+                      \foreach \i in {-2,-1,1,2,3,4,5,6} \draw (\i,0.08) -- (\i,-0.08) node[below] {\tiny \i};
+                      \foreach \i in {-2,-1,1,2,3,4,5,6,7} \draw (0.08,\i) -- (-0.08,\i) node[left] {\tiny \i};
+                      \node[below left, inner sep=1.5pt] at (0,0) {\tiny 0};
+                      \fill (2,3) circle (2.5pt);
+                      \node[above right, xshift=1pt, yshift=1pt] at (2,3) {\scriptsize Q};
+                      \draw[dashed] (2,0) -- (2,3) -- (0,3);
+                  \end{tikzpicture}
+              }
+        \item \raisebox{-0.5\height}{
+                  \begin{tikzpicture}[scale=0.4]
+                      \draw[thick, rotate around={52:(2,3)}] (2,3) ellipse (2.6 and 1.35);
+                      \draw[->] (-2.5,0) -- (6.5,0) node[above left, inner sep=1pt] {\scriptsize x};
+                      \draw[->] (0,-2.5) -- (0,7.6);
+                      \node[right] at (0,7.2) {\scriptsize y};
+                      \foreach \i in {-2,-1,1,2,3,4,5,6} \draw (\i,0.08) -- (\i,-0.08) node[below] {\tiny \i};
+                      \foreach \i in {-2,-1,1,2,3,4,5,6,7} \draw (0.08,\i) -- (-0.08,\i) node[left] {\tiny \i};
+                      \node[below left, inner sep=1.5pt] at (0,0) {\tiny 0};
+                      \fill (2,3) circle (2.5pt);
+                      \node[above right, xshift=1pt, yshift=1pt] at (2,3) {\scriptsize Q};
+                      \draw[dashed] (2,0) -- (2,3) -- (0,3);
+                  \end{tikzpicture}
+              }
+        \item \raisebox{-0.5\height}{
+                  \begin{tikzpicture}[scale=0.4]
+                      \draw[thick] (2,3) ellipse (3.6 and 2);
+                      \draw[->] (-2.5,0) -- (6.5,0) node[above left, inner sep=1pt] {\scriptsize x};
+                      \draw[->] (0,-2.5) -- (0,7.6);
+                      \node[right] at (0,7.2) {\scriptsize y};
+                      \foreach \i in {-2,-1,1,2,3,4,5,6} \draw (\i,0.08) -- (\i,-0.08) node[below] {\tiny \i};
+                      \foreach \i in {-2,-1,1,2,3,4,5,6,7} \draw (0.08,\i) -- (-0.08,\i) node[left] {\tiny \i};
+                      \node[below left, inner sep=1.5pt] at (0,0) {\tiny 0};
+                      \fill (2,3) circle (2.5pt);
+                      \node[above right, xshift=1pt, yshift=1pt] at (2,3) {\scriptsize Q};
+                      \draw[dashed] (2,0) -- (2,3) -- (0,3);
+                  \end{tikzpicture}
+              }
+        \item \raisebox{-0.5\height}{
+                  \begin{tikzpicture}[scale=0.4]
+                      \draw[thick] (2,3) circle (4);
+                      \draw[->] (-2.5,0) -- (6.5,0) node[above left, inner sep=1pt] {\scriptsize x};
+                      \draw[->] (0,-2.5) -- (0,7.6);
+                      \node[right] at (0,7.2) {\scriptsize y};
+                      \foreach \i in {-2,-1,1,2,3,4,5,6} \draw (\i,0.08) -- (\i,-0.08) node[below] {\tiny \i};
+                      \foreach \i in {-2,-1,1,2,3,4,5,6,7} \draw (0.08,\i) -- (-0.08,\i) node[left] {\tiny \i};
+                      \node[below left, inner sep=1.5pt] at (0,0) {\tiny 0};
+                      \fill (2,3) circle (2.5pt);
+                      \node[above right, xshift=1pt, yshift=1pt] at (2,3) {\scriptsize Q};
+                      \draw[dashed] (2,0) -- (2,3) -- (0,3);
+                  \end{tikzpicture}
+              }
+        \item \raisebox{-0.5\height}{
+                  \begin{tikzpicture}[scale=0.4]
+                      \draw[thick] (-2.6,-0.6) -- (5.2,7.2);
+                      \draw[thick] (-1.4,-2.4) -- (6.2,5.2);
+                      \draw[->] (-2.5,0) -- (6.5,0) node[above left, inner sep=1pt] {\scriptsize x};
+                      \draw[->] (0,-2.5) -- (0,7.6);
+                      \node[right] at (0,7.2) {\scriptsize y};
+                      \foreach \i in {-2,-1,1,2,3,4,5,6} \draw (\i,0.08) -- (\i,-0.08) node[below] {\tiny \i};
+                      \foreach \i in {-2,-1,1,2,3,4,5,6,7} \draw (0.08,\i) -- (-0.08,\i) node[left] {\tiny \i};
+                      \node[below left, inner sep=1.5pt] at (0,0) {\tiny 0};
+                      \fill (2,3) circle (2.5pt);
+                      \node[above right, xshift=1pt, yshift=1pt] at (2,3) {\scriptsize Q};
+                      \draw[dashed] (2,0) -- (2,3) -- (0,3);
+                  \end{tikzpicture}
+              }
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{22cm}
+
+    \switchcolumn[0]*
+    \newpage
+    \textbf{9) UFRGS-2017} \\
+    A representação geométrica das retas $r$ e $s$ encontra-se desenhada no sistema de coordenadas cartesianas na imagem a seguir.
+
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.6]
+            \draw[->] (-2.5,0) -- (7.5,0) node[above] {x};
+            \draw[->] (0,-2.5) -- (0,7.5) node[right] {y};
+            \foreach \i in {-2,-1,1,2,3,4,5,6,7} \draw (\i,0.1) -- (\i,-0.1) node[below] {\scriptsize \i};
+            \foreach \i in {-2,-1,1,2,3,4,5,6,7} \draw (0.1,\i) -- (-0.1,\i) node[left] {\scriptsize \i};
+            \node[below left] at (0,0) {\scriptsize 0};
+
+            % Reta r
+            \draw[thick] (-2,2) -- (4,8) node[below right] {r};
+
+            % Reta s
+            \draw[thick] (-1.5,7.5) -- (7.5,-1.5) node[above right, pos=0.6] {s};
+
+            % Ponto de interseção (1,5)
+            \fill (1,5) circle (3pt);
+            \draw[dashed] (1,0) -- (1,5) -- (0,5);
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.3cm}
+
+    Assinale a alternativa que apresenta o sistema de equações lineares que pode representar as retas $r$ e $s$ da imagem acima.
+
+    \vspace{0.3cm}
+    \begin{enumerate}[label=(\Alph*), itemsep=0.4cm]
+        \item $\begin{cases} -2x + 3y = 4 \\ 5x + 5y = 1 \end{cases}$
+        \item $\begin{cases} -x - y = 2 \\ x + y = 1 \end{cases}$
+        \item $\begin{cases} -x + y = 4 \\ x + y = 6 \end{cases}$
+        \item $\begin{cases} -x + 2y = 3 \\ x + y = 6 \end{cases}$
+        \item $\begin{cases} x - y = 2 \\ x + y = 0 \end{cases}$
+    \end{enumerate}
+    \vspace{0.4cm}
+
+    \switchcolumn[1]
+    \vspace{12cm}
+
+    \switchcolumn[0]*
+    \newpage
+    \textbf{10) UFRGS-2016} \\
+    Os pontos A, B, C, D, E e F determinam um hexágono regular ABCDEF de lado 1, tal que o ponto A tem coordenadas $(1,0)$ e o ponto D tem coordenadas $(-1,0)$, como na figura abaixo.
+
+    \vspace{0.2cm}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.1]
+            % Eixos
+            \draw[->] (-1.5,0) -- (1.5,0) node[below] {x};
+            \draw[->] (0,-1.4) -- (0,1.5) node[left] {y};
+
+            % Ticks
+            \draw (1,0.06) -- (1,-0.06) node[below] {\footnotesize 1};
+            \draw (-1,0.06) -- (-1,-0.06) node[below] {\footnotesize -1};
+            \draw (0.06,1) -- (-0.06,1) node[left] {\footnotesize 1};
+            \draw (0.06,-1) -- (-0.06,-1) node[left] {\footnotesize -1};
+            \node[below left] at (0,0) {\footnotesize 0};
+
+            % Vértices
+            \coordinate (A) at (1,0);
+            \coordinate (B) at (0.5,0.866);
+            \coordinate (C) at (-0.5,0.866);
+            \coordinate (D) at (-1,0);
+            \coordinate (E) at (-0.5,-0.866);
+            \coordinate (F) at (0.5,-0.866);
+
+            % Hexágono
+            \draw[thick] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+
+            % Pontos e rótulos
+            \fill (A) circle (1.5pt) node[above right] {A};
+            \fill (B) circle (1.5pt) node[above right] {B};
+            \fill (C) circle (1.5pt) node[above left] {C};
+            \fill (D) circle (1.5pt) node[above left] {D};
+            \fill (E) circle (1.5pt) node[below left] {E};
+            \fill (F) circle (1.5pt) node[below right] {F};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{0.2cm}
+
+    A equação da reta que passa pelos pontos B e D é
+
+    \vspace{0.2cm}
+    \begin{enumerate}[label=(\Alph*), itemsep=0.15cm]
+        \item $y = \sqrt{3}x$.
+        \item $y = \dfrac{\sqrt{3}}{3}x + \dfrac{\sqrt{3}}{3}$.
+        \item $y = \dfrac{\sqrt{3}}{2}x + \dfrac{\sqrt{3}}{2}$.
+        \item $y = \dfrac{\sqrt{3}}{3}x - \dfrac{\sqrt{3}}{3}$.
+        \item $y = \dfrac{\sqrt{3}}{2}x - \dfrac{\sqrt{3}}{2}$.
+    \end{enumerate}
+    \vspace{0.3cm}
+
+    \switchcolumn[1]
+    \vspace{5.5cm}
+
+    \switchcolumn[0]*
+    \textbf{11) UFRGS-2016} \\
+    As retas de equações $y = ax$ e $y = -x + b$ \\ interceptam-se em um único ponto cujas coordenadas são estritamente negativas.
+
+    Então, pode-se afirmar que
+
+    \vspace{0.2cm}
+    \begin{enumerate}[label=(\Alph*), itemsep=0.15cm]
+        \item $a > 0$ e $b > 0$.
+        \item $a < 0$ e $b < 0$.
+        \item $a < -1$ e $b > 0$.
+        \item $a > 0$ e $b < 0$.
+        \item $a < -1$ e $b < 0$.
+    \end{enumerate}
+    \vspace{0.3cm}
+
+    \switchcolumn[1]
+    \vspace{2.5cm}
+
+\end{paracol}
+
+\vspace{0.2cm}
+
+% ---------------------------------------------------------
+% GABARITO
+% ---------------------------------------------------------
+\begin{center}
+    \rule{0.6\textwidth}{0.5pt} \\[0.2cm]
+    \textbf{\large GABARITO} \\[0.2cm]
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{1} & B & \textbf{2}  & B & \textbf{3}  & C & \textbf{4} & D \\ \hline
+        \textbf{5} & C & \textbf{6}  & E & \textbf{7}  & E & \textbf{8} & A \\ \hline
+        \textbf{9} & C & \textbf{10} & B & \textbf{11} & D & \multicolumn{2}{c|}{} \\ \hline
+    \end{tabular} \\[0.2cm]
+    \rule{0.6\textwidth}{0.5pt}
+\end{center}
+
+\end{document}
