@@ -1,0 +1,52 @@
+\documentclass[tikz,border=10pt]{standalone}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+% Cores oficiais do PEAC
+\definecolor{peacblue}{RGB}{2,64,179}
+\definecolor{peacred}{RGB}{234,4,18}
+\definecolor{peacblack}{RGB}{26,26,26}
+
+\begin{document}
+\begin{tikzpicture}[x=1mm,y=1mm]
+    % Fundo branco com cantos arredondados
+    \fill[white, rounded corners=3mm] (-28,-28) rectangle (28,28);
+
+    % Retângulo Superior Azul
+    \fill[peacblue] (-24,6.5) rectangle (24,24);
+
+    % Retângulo Inferior Vermelho
+    \fill[peacred] (-24,-8) rectangle (24,6.5);
+
+    % Faixa horizontal dos braços (branca)
+    \fill[white] (-24.5,2.5) rectangle (24.5,6.5);
+    \draw[peacblack, line width=0.8pt] (-24.5,2.5) -- (24.5,2.5);
+    \draw[peacblack, line width=0.8pt] (-24.5,6.5) -- (24.5,6.5);
+    \draw[peacblack, line width=0.8pt] (-24.5,2.5) -- (-24.5,6.5);
+    \draw[peacblack, line width=0.8pt] (24.5,2.5) -- (24.5,6.5);
+
+    % Três figuras humanas (Corpos e Cabeças)
+    % Figura 1 (Esquerda): x = -16
+    % Figura 2 (Centro): x = 0
+    % Figura 3 (Direita): x = 16
+    \foreach \x in {-16, 0, 16} {
+        % Corpo branco
+        \fill[white] (\x-3,-8) rectangle (\x+3,2.5);
+        \draw[peacblack, line width=0.8pt] (\x-3,-8) -- (\x-3,2.5);
+        \draw[peacblack, line width=0.8pt] (\x+3,-8) -- (\x+3,2.5);
+        \draw[peacblack, line width=0.8pt] (\x-3,-8) -- (\x+3,-8);
+        % Divisão das pernas
+        \draw[peacblack, line width=0.8pt] (\x,-8) -- (\x,-2);
+
+        % Cabeça (elipse branca com borda preta)
+        \filldraw[fill=white, draw=peacblack, line width=0.8pt] (\x,11.5) ellipse (3.4 and 4);
+    }
+
+    % Linhas divisórias entre as pessoas nos braços
+    \draw[peacblack, line width=0.8pt] (-8,2.5) -- (-8,6.5);
+    \draw[peacblack, line width=0.8pt] (8,2.5) -- (8,6.5);
+
+    % Texto PEAC
+    \node[peacblack, scale=1] at (0,-19) {\fontsize{26}{26}\selectfont\textbf{\textsf{PEAC}}};
+\end{tikzpicture}
+\end{document}

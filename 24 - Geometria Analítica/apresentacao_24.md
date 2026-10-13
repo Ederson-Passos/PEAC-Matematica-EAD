@@ -123,6 +123,13 @@ style: |
 ## AULA 24 - Geometria Analítica
 
 *(Aguardando o início da transmissão)*
+
+<div style="margin-top: 20px; display: inline-block; background-color: #FFFFFF; border-radius: 12px; padding: 14px 18px 8px 18px;">
+
+![width:180px](logo-peac.png)
+
+</div>
+
 </div>
 
 ---
