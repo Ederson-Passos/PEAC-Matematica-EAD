@@ -350,7 +350,7 @@ b) Dada a elipse $\frac{x^2}{4} + \frac{y^2}{9} = 1$, determine os seus 4 vérti
 # Questão 01 - UFRGS 2025
 
 <style scoped>
-.theory { font-size: 17px; }
+.theory { font-size: 16px; }
 </style>
 
 <div class="content-wrapper">
@@ -359,24 +359,9 @@ b) Dada a elipse $\frac{x^2}{4} + \frac{y^2}{9} = 1$, determine os seus 4 vérti
 O gráfico da função $f(x) = x^2 - 2x + 3$ está representado no sistema de coordenadas cartesianas da figura abaixo. O vértice A do triângulo isósceles ABC está posicionado no vértice da parábola, e o vértice B está posicionado na origem do sistema de coordenadas cartesianas.
 
 <div style="text-align: center; margin: 4px 0;">
-<svg width="220" height="135" viewBox="-20 -15 220 150">
-  <!-- Eixos -->
-  <line x1="0" y1="120" x2="190" y2="120" stroke="#8BE9FD" stroke-width="1.5" />
-  <line x1="40" y1="130" x2="40" y2="10" stroke="#8BE9FD" stroke-width="1.5" />
-  <text x="185" y="135" fill="#8BE9FD" font-size="12">x</text>
-  <text x="28" y="15" fill="#8BE9FD" font-size="12">y</text>
-  <!-- Triângulo -->
-  <polygon points="40,120 120,120 80,40" fill="rgba(139,233,253,0.3)" stroke="#F8F8F2" stroke-width="1.5" />
-  <!-- Parábola -->
-  <path d="M 20,5 Q 80,75 140,5" fill="none" stroke="#F1FA8C" stroke-width="2" />
-  <!-- Vértices -->
-  <circle cx="80" cy="40" r="3.5" fill="#FF79C6" />
-  <circle cx="40" cy="120" r="3.5" fill="#FF79C6" />
-  <circle cx="120" cy="120" r="3.5" fill="#FF79C6" />
-  <text x="80" y="32" fill="#F8F8F2" font-size="12" font-weight="bold" text-anchor="middle">A</text>
-  <text x="30" y="132" fill="#F8F8F2" font-size="12" font-weight="bold">B</text>
-  <text x="125" y="132" fill="#F8F8F2" font-size="12" font-weight="bold">C</text>
-</svg>
+
+![width:160px](figura_q1.png)
+
 </div>
 
 A área do triângulo ABC é
@@ -398,7 +383,7 @@ A área do triângulo ABC é
 # Questão 02 - UFRGS 2019
 
 <style scoped>
-.theory { font-size: 16px; }
+.theory { font-size: 15px; }
 </style>
 
 <div class="content-wrapper">
@@ -409,27 +394,9 @@ Considere os pontos A, B e C, de coordenadas inteiras, que determinam os vértic
 A revolução do triângulo ABC, em torno do eixo x, gera o sólido P, e a revolução do triângulo ABC, em torno do eixo y, gera o sólido Q.
 
 <div style="text-align: center; margin: 4px 0;">
-<svg width="220" height="130" viewBox="-15 -10 215 140">
-  <!-- Eixos -->
-  <line x1="10" y1="110" x2="190" y2="110" stroke="#8BE9FD" stroke-width="1.5" />
-  <line x1="30" y1="125" x2="30" y2="10" stroke="#8BE9FD" stroke-width="1.5" />
-  <text x="185" y="125" fill="#8BE9FD" font-size="11">x</text>
-  <text x="18" y="15" fill="#8BE9FD" font-size="11">y</text>
-  <!-- Ticks x -->
-  <text x="25" y="122" fill="#888" font-size="10">0</text>
-  <line x1="65" y1="107" x2="65" y2="113" stroke="#888" /><text x="63" y="122" fill="#888" font-size="9">2</text>
-  <line x1="100" y1="107" x2="100" y2="113" stroke="#888" /><text x="98" y="122" fill="#888" font-size="9">4</text>
-  <!-- Ticks y -->
-  <line x1="27" y1="20" x2="33" y2="20" stroke="#888" /><text x="18" y="23" fill="#888" font-size="9">6</text>
-  <!-- Triângulo ABC -->
-  <polygon points="30,20 65,110 100,110" fill="rgba(139,233,253,0.3)" stroke="#F8F8F2" stroke-width="1.5" />
-  <circle cx="30" cy="20" r="3" fill="#FF79C6" />
-  <circle cx="65" cy="110" r="3" fill="#FF79C6" />
-  <circle cx="100" cy="110" r="3" fill="#FF79C6" />
-  <text x="35" y="18" fill="#F8F8F2" font-size="11" font-weight="bold">A</text>
-  <text x="60" y="103" fill="#F8F8F2" font-size="11" font-weight="bold">B</text>
-  <text x="105" y="105" fill="#F8F8F2" font-size="11" font-weight="bold">C</text>
-</svg>
+
+![width:150px](figura_q2.png)
+
 </div>
 
 A razão entre os volumes de P e Q é
