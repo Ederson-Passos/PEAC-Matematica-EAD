@@ -872,10 +872,10 @@ Qual é a quantidade mínima de água, em litro, que cada morador, em média, de
 
 ---
 
-# Questão 170 --- ENEM 2025 (Parte 1/2)
+# Questão 170 --- ENEM 2025
 
 <style scoped>
-.theory { font-size: 15.5px; line-height: 1.28; }
+.theory { font-size: 14.5px; line-height: 1.25; }
 </style>
 
 <div class="content-wrapper">
@@ -883,29 +883,11 @@ Qual é a quantidade mínima de água, em litro, que cada morador, em média, de
 
 Uma caixa de descarga, acoplada a um vaso sanitário, tem a forma de paralelepípedo reto retângulo cujas dimensões internas da base são $2{,}5\text{ dm}$ e $1{,}5\text{ dm}$. Nessa caixa há uma boia que interrompe o abastecimento quando a altura da coluna de água atinge $2\text{ dm}$, conforme a figura.
 
-<div style="text-align: center; margin: 6px 0;">
+<div style="text-align: center; margin: 4px 0;">
 
-![width:495px](figura_q170.svg)
-
-</div>
-
-*(Continua no próximo slide...)*
+![width:440px](figura_q170.svg)
 
 </div>
-</div>
-
----
-
-# Questão 170 --- ENEM 2025 (Parte 2/2)
-
-<style scoped>
-.theory { font-size: 16.5px; line-height: 1.32; }
-</style>
-
-<div class="content-wrapper">
-<div class="theory">
-
-*(Continuação — Caixa de descarga de base $2{,}5\text{ dm} \times 1{,}5\text{ dm}$ e coluna de água de $2\text{ dm}$)*
 
 A cada acionamento da descarga, todo o volume de água contida na caixa é despejado no vaso. Para reduzir o volume de água despejado a cada acionamento, uma pessoa colocará, no interior dessa caixa, garrafas de $300\text{ mL}$, cheias de areia e tampadas, de modo a ficarem submersas quando o abastecimento for interrompido.
 
@@ -913,11 +895,7 @@ Para garantir o funcionamento eficiente, o mínimo de água despejada a cada aci
 
 A quantidade máxima de garrafas que serão colocadas nessa caixa, garantindo um funcionamento eficiente, é igual a
 
-(A) $10$.
-(B) $8$.
-(C) $4$.
-(D) $3$.
-(E) $2$.
+(A) $10$. &nbsp;&nbsp; (B) $8$. &nbsp;&nbsp; (C) $4$. &nbsp;&nbsp; (D) $3$. &nbsp;&nbsp; (E) $2$.
 
 </div>
 </div>
