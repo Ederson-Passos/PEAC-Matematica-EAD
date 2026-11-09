@@ -141,6 +141,248 @@ style: |
 
 ---
 
+# TRI: não importa apenas quantas questões você acerta
+
+<style scoped>
+.lead-msg {
+  font-size: 15.5px;
+  background: rgba(0, 0, 0, 0.32);
+  border-left: 4px solid #FFD54F;
+  padding: 7px 14px;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.tri-grid {
+  display: flex;
+  gap: 18px;
+  align-items: stretch;
+}
+.tri-left {
+  flex: 1.08;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 7px;
+}
+.tri-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.param-card {
+  background: rgba(0, 0, 0, 0.28);
+  padding: 7px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.25;
+}
+.param-a { border-left: 4px solid #FFD54F; }
+.param-b { border-left: 4px solid #80DEEA; }
+.param-c { border-left: 4px solid #A5D6A7; }
+.compare-box {
+  background: rgba(255, 213, 79, 0.12);
+  border: 1px solid rgba(255, 213, 79, 0.5);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13.5px;
+  line-height: 1.26;
+}
+.footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 9px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  font-size: 14.5px;
+}
+.inep-ref {
+  font-size: 11px;
+  opacity: 0.78;
+  padding-right: 110px;
+}
+</style>
+
+<div class="lead-msg">
+A nota do ENEM não é calculada simplesmente pela soma dos acertos. A <strong>Teoria da Resposta ao Item (TRI)</strong> considera as características psicométricas de cada questão e o conjunto de respostas do participante para estimar sua <strong>proficiência ($\theta$)</strong>.
+</div>
+
+<div class="tri-grid">
+<div class="tri-left">
+
+<div class="param-card param-a">
+<strong style="color:#FFD54F;">A — Discriminação:</strong> Capacidade da questão de diferenciar participantes com diferentes níveis de proficiência (inclinação da curva).
+</div>
+
+<div class="param-card param-b">
+<strong style="color:#80DEEA;">B — Dificuldade:</strong> Indica o nível de proficiência ($\theta$) associado à dificuldade da questão (ponto de inflexão da curva).
+</div>
+
+<div class="param-card param-c">
+<strong style="color:#A5D6A7;">C — Acerto casual:</strong> Representa a probabilidade de acerto por acaso em uma questão de múltipla escolha.
+</div>
+
+<div class="compare-box">
+<strong>⚖️ Mesma quantidade de acertos $\neq$ Mesma nota</strong><br>
+Dois estudantes com o mesmo total de acertos podem obter notas diferentes. As questões não possuem "pesos fixos" nem pontuação pré-definida: a TRI estima a proficiência pelo <strong>conjunto de respostas</strong>, avaliando quais itens foram acertados ou errados e seus parâmetros ($A, B, C$).
+</div>
+
+</div>
+
+<div class="tri-right">
+
+![width:500px](cci_tri.svg)
+
+</div>
+</div>
+
+<div class="footer-bar">
+<span>🎯 <strong>"Na TRI, o padrão de respostas também importa."</strong></span>
+<span class="inep-ref">Ref.: INEP. <em>Entenda sua nota no ENEM: Guia do Participante</em>. Brasília, 2021.</span>
+</div>
+
+---
+
+# Matemática no ENEM: estratégia também conta
+
+<style scoped>
+.lead-msg {
+  font-size: 15px;
+  background: rgba(0, 0, 0, 0.32);
+  border-left: 4px solid #FFD54F;
+  padding: 6px 14px;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+.coherence-box {
+  background: rgba(0, 0, 0, 0.30);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin-bottom: 9px;
+}
+.coherence-title {
+  font-size: 13.5px;
+  color: #FFD54F;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.q-table {
+  width: 100%;
+  margin: 2px 0 !important;
+  font-size: 13px !important;
+}
+.q-table th, .q-table td {
+  padding: 3px 6px !important;
+}
+.ok { color: #81C784 !important; font-weight: bold; font-size: 15px; }
+.err { color: #FF8A80 !important; font-weight: bold; font-size: 15px; }
+.passes-grid {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+.pass-card {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.30);
+  border-top: 4px solid #FFD54F;
+  border-radius: 6px;
+  padding: 8px 11px;
+  font-size: 13px;
+  line-height: 1.24;
+}
+.pass-2 { border-top-color: #80DEEA; }
+.pass-3 { border-top-color: #FF8A80; }
+.pass-head {
+  font-size: 13.5px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  display: block;
+}
+.footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  font-size: 14px;
+}
+.inep-ref {
+  font-size: 11px;
+  opacity: 0.78;
+  padding-right: 110px;
+}
+</style>
+
+<div class="lead-msg">
+Construa um <strong>desempenho consistente</strong>: priorize as questões que você resolve com segurança e administre o tempo de prova.
+</div>
+
+<div class="coherence-box">
+<div class="coherence-title">
+<span><strong>1. Coerência Pedagógica das Respostas</strong> (8 questões ordenadas por dificuldade crescente → ambos com 5 acertos)</span>
+<span style="font-size:11.5px; color:#E0E0E0; font-weight:normal;">*Ilustração conceitual (sem notas numéricas atribuídas)</span>
+</div>
+
+<table class="q-table">
+  <tr>
+    <th style="text-align:left;">Progressão de Dificuldade</th>
+    <th>Fácil</th><th>Fácil</th><th>Média</th><th>Média</th><th>Média</th><th>Difícil</th><th>Difícil</th><th>Difícil</th>
+    <th style="text-align:left;">Interpretação pelo Modelo da TRI</th>
+  </tr>
+  <tr>
+    <td style="text-align:left;"><strong>ESTUDANTE A</strong> (5 acertos)</td>
+    <td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td><td class="err">✗</td><td class="err">✗</td><td class="err">✗</td>
+    <td style="text-align:left; font-size:12px; color:#C8E6C9 !important;"><strong>Padrão mais coerente</strong> com a progressão esperada de proficiência.</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;"><strong>ESTUDANTE B</strong> (5 acertos)</td>
+    <td class="err">✗</td><td class="err">✗</td><td class="ok">✓</td><td class="ok">✓</td><td class="err">✗</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td>
+    <td style="text-align:left; font-size:12px; color:#FFCDD2 !important;"><strong>Inconsistências</strong> entre acertos e erros (influencia negativamente a estimativa).</td>
+  </tr>
+</table>
+</div>
+
+<div class="passes-grid">
+<div class="pass-card">
+<span class="pass-head" style="color:#FFD54F;">1ª PASSADA — QUESTÕES FÁCEIS</span>
+Resolva primeiro o que reconhece e desenvolve com segurança:<br>
+• Porcentagem e proporcionalidade<br>
+• Regra de três e escalas<br>
+• Leitura de gráficos e tabelas<br>
+• Estatística básica
+</div>
+
+<div class="pass-card pass-2">
+<span class="pass-head" style="color:#80DEEA;">2ª PASSADA — INTERMEDIÁRIAS</span>
+Retorne às questões que exigem mais interpretação, cálculos ou álgebra:<br>
+• Funções e gráficos<br>
+• Geometria plana e espacial<br>
+• Problemas com múltiplas etapas<br>
+• Aplicações de fórmulas prontas
+</div>
+
+<div class="pass-card pass-3">
+<span class="pass-head" style="color:#FF8A80;">3ª PASSADA — COMPLEXAS / LONGAS</span>
+Use o tempo restante nas de maior elaboração e pendências:<br>
+• Combinatória e probabilidade<br>
+• Problemas algébricos elaborados<br>
+<span style="font-size:11.5px; color:#FFE082;">⚠️ <em>Técnica de gestão de tempo (não deixe itens em branco; a dificuldade real depende da questão!).</em></span>
+</div>
+</div>
+
+<div class="footer-bar">
+<span>🚀 <strong>"Primeiro, garanta aquilo que você domina. Depois, avance para os desafios."</strong></span>
+<span class="inep-ref">Ref.: INEP. <em>Entenda sua nota no ENEM: Guia do Participante</em>. Brasília, 2021.</span>
+</div>
+
+---
+
 # Ignite ENEM
 
 <style scoped>
@@ -332,33 +574,9 @@ Um controlador de voo dispõe de um instrumento que descreve a altitude de uma a
 A tela do instrumento representa proporcionalmente as dimensões reais das distâncias associadas ao voo. A figura apresenta a tela do instrumento depois de concluída a viagem de um avião, sendo a medida do lado de cada quadradinho da malha igual a $1\text{ cm}$.
 
 <div style="text-align: center; margin: 4px 0;">
-<svg viewBox="-35 -25 505 190" width="380" style="background: #FFFFFF; border-radius: 6px; padding: 3px;">
-  <!-- Borda da tela do instrumento -->
-  <rect x="-30" y="-22" width="480" height="180" fill="none" stroke="#111" stroke-width="2"/>
-  <!-- Malha quadriculada 14x4 (escala 30px = 1 un) -->
-  <g stroke="#C0C0C0" stroke-width="1">
-    <line x1="0" y1="0" x2="420" y2="0"/><line x1="0" y1="30" x2="420" y2="30"/><line x1="0" y1="60" x2="420" y2="60"/><line x1="0" y1="90" x2="420" y2="90"/><line x1="0" y1="120" x2="420" y2="120"/>
-    <line x1="0" y1="0" x2="0" y2="120"/><line x1="30" y1="0" x2="30" y2="120"/><line x1="60" y1="0" x2="60" y2="120"/><line x1="90" y1="0" x2="90" y2="120"/><line x1="120" y1="0" x2="120" y2="120"/><line x1="150" y1="0" x2="150" y2="120"/><line x1="180" y1="0" x2="180" y2="120"/><line x1="210" y1="0" x2="210" y2="120"/><line x1="240" y1="0" x2="240" y2="120"/><line x1="270" y1="0" x2="270" y2="120"/><line x1="300" y1="0" x2="300" y2="120"/><line x1="330" y1="0" x2="330" y2="120"/><line x1="360" y1="0" x2="360" y2="120"/><line x1="390" y1="0" x2="390" y2="120"/><line x1="420" y1="0" x2="420" y2="120"/>
-  </g>
-  <!-- Eixos coordenados -->
-  <defs>
-    <marker id="arrow149" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#111"/>
-    </marker>
-  </defs>
-  <line x1="0" y1="120" x2="438" y2="120" stroke="#111" stroke-width="2" marker-end="url(#arrow149)"/>
-  <line x1="0" y1="120" x2="0" y2="-16" stroke="#111" stroke-width="2" marker-end="url(#arrow149)"/>
-  <text x="392" y="138" font-family="sans-serif" font-size="12" fill="#111">Distância</text>
-  <text x="6" y="-5" font-family="sans-serif" font-size="12" fill="#111">Altitude</text>
-  <!-- Pontos e Rótulos -->
-  <circle cx="0" cy="120" r="4" fill="#111"/>
-  <text x="0" y="135" font-family="sans-serif" font-size="11" fill="#111" text-anchor="middle">Origem</text>
-  <text x="0" y="147" font-family="sans-serif" font-size="11" fill="#111" text-anchor="middle">do voo</text>
-  <circle cx="390" cy="120" r="4" fill="#111"/>
-  <text x="354" y="136" font-family="sans-serif" font-size="11" fill="#111" text-anchor="middle">Destino</text>
-  <!-- Trajetória: (0,0)->(2,1)->(7,1)->(10,0.3)->(11,0.4)->(13,0) -->
-  <polyline points="0,120 60,90 210,90 300,111 330,108 390,120" fill="none" stroke="#111" stroke-width="3"/>
-</svg>
+
+![width:380px](figura_q149.svg)
+
 </div>
 
 Essa tela apresenta os dados de um voo cuja maior altitude alcançada foi de $5\text{ km}$.
@@ -703,78 +921,9 @@ Qual é a quantidade mínima de água, em litro, que cada morador, em média, de
 Uma caixa de descarga, acoplada a um vaso sanitário, tem a forma de paralelepípedo reto retângulo cujas dimensões internas da base são $2{,}5\text{ dm}$ e $1{,}5\text{ dm}$. Nessa caixa há uma boia que interrompe o abastecimento quando a altura da coluna de água atinge $2\text{ dm}$, conforme a figura.
 
 <div style="text-align: center; margin: 6px 0;">
-<svg viewBox="0 0 640 225" width="495" style="background: #FFFFFF; border-radius: 8px; padding: 4px;">
-  <defs>
-    <marker id="arr170" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#231F20"/>
-    </marker>
-  </defs>
-  <!-- CAIXA ESQUERDA: Enchendo (boia abaixada) -->
-  <g transform="translate(65, 12)">
-    <polygon points="0,160 200,160 200,20 186,2 14,2 0,20" fill="#E6E7E8"/>
-    <polygon points="0,160 200,160 200,135 0,135" fill="#55B3DF"/>
-    <polygon points="0,135 200,135 186,103 14,103" fill="#A4D4EC"/>
-    <ellipse cx="100" cy="143" rx="16" ry="5.5" fill="#6C77B2" stroke="#3B4269" stroke-width="1.2"/>
-    <!-- Jato e boia abaixada -->
-    <ellipse cx="179" cy="119" rx="9.5" ry="3.2" fill="none" stroke="#2B9FD9" stroke-width="1"/>
-    <line x1="179" y1="30" x2="179" y2="119" stroke="#2B9FD9" stroke-width="2.6"/>
-    <line x1="178" y1="30" x2="195" y2="30" stroke="#231F20" stroke-width="3.2"/>
-    <line x1="178" y1="30" x2="166" y2="85" stroke="#231F20" stroke-width="1.5"/>
-    <circle cx="166" cy="85" r="8.5" fill="#231F20"/>
-    <!-- Arestas tracejadas e sólidas -->
-    <g stroke="#231F20" stroke-width="1.2" stroke-dasharray="4,3" fill="none">
-      <line x1="0" y1="160" x2="14" y2="126"/><line x1="200" y1="160" x2="186" y2="126"/>
-      <line x1="14" y1="126" x2="186" y2="126"/><line x1="14" y1="126" x2="14" y2="20"/><line x1="186" y1="126" x2="186" y2="20"/>
-    </g>
-    <g stroke="#231F20" stroke-width="1.5" fill="none">
-      <rect x="0" y="20" width="200" height="140"/>
-      <polyline points="0,20 14,2 186,2 200,20"/>
-      <line x1="14" y1="20" x2="14" y2="2"/><line x1="186" y1="20" x2="186" y2="2"/>
-    </g>
-    <!-- Cotas 1,5 dm e 2,5 dm -->
-    <line x1="-35" y1="158" x2="-22" y2="127" stroke="#231F20" stroke-width="1" marker-start="url(#arr170)" marker-end="url(#arr170)"/>
-    <text x="-32" y="146" font-family="sans-serif" font-size="11" fill="#231F20" text-anchor="end">1,5 dm</text>
-    <line x1="0" y1="180" x2="200" y2="180" stroke="#231F20" stroke-width="1" marker-start="url(#arr170)" marker-end="url(#arr170)"/>
-    <rect x="78" y="172" width="44" height="15" fill="#FFFFFF"/>
-    <text x="100" y="184" font-family="sans-serif" font-size="11" fill="#231F20" text-anchor="middle">2,5 dm</text>
-    <text x="100" y="202" font-family="sans-serif" font-size="10.5" font-weight="bold" fill="#555" text-anchor="middle">1. Caixa enchendo</text>
-  </g>
 
-  <!-- CAIXA DIREITA: Abastecimento interrompido (altura 2 dm) -->
-  <g transform="translate(365, 12)">
-    <polygon points="0,160 200,160 200,20 186,2 14,2 0,20" fill="#E6E7E8"/>
-    <polygon points="0,160 200,160 200,45 0,45" fill="#55B3DF"/>
-    <polygon points="0,45 200,45 186,23 14,23" fill="#A4D4EC"/>
-    <ellipse cx="100" cy="143" rx="16" ry="5.5" fill="#6C77B2" stroke="#3B4269" stroke-width="1.2"/>
-    <!-- Boia levantada na horizontal -->
-    <line x1="178" y1="30" x2="195" y2="30" stroke="#231F20" stroke-width="3.2"/>
-    <line x1="178" y1="30" x2="116" y2="30" stroke="#231F20" stroke-width="1.5"/>
-    <circle cx="116" cy="30" r="9" fill="#231F20"/>
-    <!-- Arestas tracejadas e sólidas -->
-    <g stroke="#231F20" stroke-width="1.2" stroke-dasharray="4,3" fill="none">
-      <line x1="0" y1="160" x2="14" y2="126"/><line x1="200" y1="160" x2="186" y2="126"/>
-      <line x1="14" y1="126" x2="186" y2="126"/><line x1="14" y1="126" x2="14" y2="20"/><line x1="186" y1="126" x2="186" y2="20"/>
-    </g>
-    <g stroke="#231F20" stroke-width="1.5" fill="none">
-      <rect x="0" y="20" width="200" height="140"/>
-      <polyline points="0,20 14,2 186,2 200,20"/>
-      <line x1="14" y1="20" x2="14" y2="2"/><line x1="186" y1="20" x2="186" y2="2"/>
-    </g>
-    <!-- Cotas 1,5 dm, 2,5 dm e 2 dm -->
-    <line x1="-35" y1="158" x2="-22" y2="127" stroke="#231F20" stroke-width="1" marker-start="url(#arr170)" marker-end="url(#arr170)"/>
-    <text x="-32" y="146" font-family="sans-serif" font-size="11" fill="#231F20" text-anchor="end">1,5 dm</text>
-    <line x1="0" y1="180" x2="200" y2="180" stroke="#231F20" stroke-width="1" marker-start="url(#arr170)" marker-end="url(#arr170)"/>
-    <rect x="78" y="172" width="44" height="15" fill="#FFFFFF"/>
-    <text x="100" y="184" font-family="sans-serif" font-size="11" fill="#231F20" text-anchor="middle">2,5 dm</text>
-    <!-- Cota vertical 2 dm -->
-    <line x1="200" y1="160" x2="238" y2="160" stroke="#231F20" stroke-width="1" stroke-dasharray="3,2"/>
-    <line x1="200" y1="45" x2="238" y2="45" stroke="#231F20" stroke-width="1" stroke-dasharray="3,2"/>
-    <line x1="232" y1="160" x2="232" y2="45" stroke="#231F20" stroke-width="1" marker-start="url(#arr170)" marker-end="url(#arr170)"/>
-    <rect x="216" y="94" width="34" height="16" fill="#FFFFFF"/>
-    <text x="233" y="106" font-family="sans-serif" font-size="11" font-weight="bold" fill="#231F20" text-anchor="middle">2 dm</text>
-    <text x="100" y="202" font-family="sans-serif" font-size="10.5" font-weight="bold" fill="#555" text-anchor="middle">2. Abastecimento interrompido</text>
-  </g>
-</svg>
+![width:495px](figura_q170.svg)
+
 </div>
 
 *(Continua no próximo slide...)*
@@ -898,46 +1047,9 @@ O valor aproximado da magnitude $M_2$ do segundo terremoto, expresso com uma cas
 As receitas anuais obtidas por uma indústria no período de $2014$ a $2021$, em milhão de reais, foram registradas, por pontos, em um gráfico. Nele, também está representada a reta que descreve a tendência de evolução das receitas. Essa reta pode ser utilizada para estimar as receitas dos anos seguintes.
 
 <div style="text-align: center; margin: 4px 0;">
-<svg viewBox="-52 -15 385 275" width="335" style="background: #FFFFFF; border-radius: 6px; padding: 3px;">
-  <defs>
-    <marker id="tri176" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#231F20"/>
-    </marker>
-  </defs>
-  <!-- Escala: x = 34px por un (0..8.85), y invertido: y_svg = 210 - 30*y -->
-  <!-- Malha tracejada -->
-  <g stroke="#939598" stroke-width="1" stroke-dasharray="4,4">
-    <line x1="0" y1="180" x2="300" y2="180"/><line x1="0" y1="150" x2="300" y2="150"/><line x1="0" y1="120" x2="300" y2="120"/><line x1="0" y1="90" x2="300" y2="90"/><line x1="0" y1="60" x2="300" y2="60"/><line x1="0" y1="30" x2="300" y2="30"/><line x1="0" y1="0" x2="300" y2="0"/>
-    <line x1="34" y1="210" x2="34" y2="-10"/><line x1="68" y1="210" x2="68" y2="-10"/><line x1="102" y1="210" x2="102" y2="-10"/><line x1="136" y1="210" x2="136" y2="-10"/><line x1="170" y1="210" x2="170" y2="-10"/><line x1="204" y1="210" x2="204" y2="-10"/><line x1="238" y1="210" x2="238" y2="-10"/><line x1="272" y1="210" x2="272" y2="-10"/>
-  </g>
-  <!-- Reta de tendência: y = 11/3 + x/3 -> em x=0: y=3.667 (y_svg=100), em x=8.85: y=6.617 (y_svg=11.5) -->
-  <line x1="0" y1="100" x2="301" y2="11.5" stroke="#DD5151" stroke-width="2.4"/>
-  <!-- Pontos registrados -->
-  <g fill="#DD5151">
-    <circle cx="34" cy="106.5" r="3.6"/>
-    <circle cx="68" cy="60" r="3.6"/>
-    <circle cx="102" cy="63.9" r="3.6"/>
-    <circle cx="136" cy="73.2" r="3.6"/>
-    <circle cx="170" cy="42.3" r="3.6"/>
-    <circle cx="204" cy="30" r="3.6"/>
-    <circle cx="238" cy="54.9" r="3.6"/>
-    <circle cx="272" cy="8.7" r="3.6"/>
-  </g>
-  <!-- Eixos -->
-  <line x1="0" y1="210" x2="304" y2="210" stroke="#231F20" stroke-width="1.8" marker-end="url(#tri176)"/>
-  <line x1="0" y1="210" x2="0" y2="-10" stroke="#231F20" stroke-width="1.8" marker-end="url(#tri176)"/>
-  <!-- Rótulos Y -->
-  <g font-family="sans-serif" font-size="11" fill="#231F20" text-anchor="end">
-    <text x="-6" y="214">0</text><text x="-6" y="184">1</text><text x="-6" y="154">2</text><text x="-6" y="124">3</text><text x="-6" y="94">4</text><text x="-6" y="64">5</text><text x="-6" y="34">6</text><text x="-6" y="4">7</text>
-  </g>
-  <!-- Rótulos X -->
-  <g font-family="sans-serif" font-size="10.5" fill="#231F20" text-anchor="middle">
-    <text x="34" y="225">2014</text><text x="68" y="225">2015</text><text x="102" y="225">2016</text><text x="136" y="225">2017</text><text x="170" y="225">2018</text><text x="204" y="225">2019</text><text x="238" y="225">2020</text><text x="272" y="225">2021</text>
-  </g>
-  <!-- Títulos dos eixos -->
-  <text x="-30" y="105" font-family="sans-serif" font-size="11" font-weight="bold" fill="#231F20" text-anchor="middle" transform="rotate(-90, -30, 105)">Receita anual (em milhão de reais)</text>
-  <text x="150" y="246" font-family="sans-serif" font-size="11.5" font-weight="bold" fill="#231F20" text-anchor="middle">Ano</text>
-</svg>
+
+![width:335px](figura_q176.svg)
+
 </div>
 
 A estimativa da receita, em milhão de reais, dessa indústria, para o ano de $2026$, obtida a partir dessa reta de tendência, é
