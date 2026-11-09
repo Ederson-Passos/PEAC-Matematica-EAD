@@ -12,7 +12,9 @@ style: |
     font-family: 'Libre Baskerville', serif;
     font-size: 25px;
     padding: 30px 50px;
-    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
     background-image:
       radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px),
       linear-gradient(180deg, #2D0206 0%, #680912 52%, #C62828 100%);
@@ -38,8 +40,8 @@ style: |
   h1 {
     color: #FFD54F;
     font-size: 29px;
-    margin-top: 0;
-    margin-bottom: 5px;
+    margin-top: 0 !important;
+    margin-bottom: 8px;
     border-bottom: 1px solid rgba(255, 213, 79, 0.45);
     padding-bottom: 5px;
   }
@@ -88,11 +90,18 @@ style: |
     align-items: flex-start;
     gap: 20px;
     margin-top: 5px;
+    margin-bottom: auto !important;
+    width: 100%;
   }
 
   .theory {
     flex: 1.3;
     line-height: 1.32;
+  }
+
+  .content-wrapper > .theory:only-child {
+    flex: 1 1 100%;
+    width: 100%;
   }
 
   .resolution {
