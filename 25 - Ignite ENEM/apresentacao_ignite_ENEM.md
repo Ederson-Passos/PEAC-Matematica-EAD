@@ -206,7 +206,7 @@ style: |
 </style>
 
 <div class="lead-msg">
-A nota do ENEM não é calculada simplesmente pela soma dos acertos. A <strong>Teoria da Resposta ao Item (TRI)</strong> considera as características psicométricas de cada questão e o conjunto de respostas do participante para estimar sua <strong>proficiência ($\theta$)</strong>.
+A nota do ENEM não é calculada simplesmente pela soma dos acertos. A <strong>Teoria da Resposta ao Item (TRI)</strong> considera as características psicométricas de cada questão e o conjunto de respostas do participante para estimar sua <strong>proficiência (θ)</strong>.
 </div>
 
 <div class="tri-grid">
@@ -217,7 +217,7 @@ A nota do ENEM não é calculada simplesmente pela soma dos acertos. A <strong>T
 </div>
 
 <div class="param-card param-b">
-<strong style="color:#80DEEA;">B — Dificuldade:</strong> Indica o nível de proficiência ($\theta$) associado à dificuldade da questão (ponto de inflexão da curva).
+<strong style="color:#80DEEA;">B — Dificuldade:</strong> Indica o nível de proficiência (θ) associado à dificuldade da questão (ponto de inflexão da curva).
 </div>
 
 <div class="param-card param-c">
@@ -225,8 +225,8 @@ A nota do ENEM não é calculada simplesmente pela soma dos acertos. A <strong>T
 </div>
 
 <div class="compare-box">
-<strong>⚖️ Mesma quantidade de acertos $\neq$ Mesma nota</strong><br>
-Dois estudantes com o mesmo total de acertos podem obter notas diferentes. As questões não possuem "pesos fixos" nem pontuação pré-definida: a TRI estima a proficiência pelo <strong>conjunto de respostas</strong>, avaliando quais itens foram acertados ou errados e seus parâmetros ($A, B, C$).
+<strong>⚖️ Mesma quantidade de acertos ≠ Mesma nota</strong><br>
+Dois estudantes com o mesmo total de acertos podem obter notas diferentes. As questões não possuem "pesos fixos" nem pontuação pré-definida: a TRI estima a proficiência pelo <strong>conjunto de respostas</strong>, avaliando quais itens foram acertados ou errados e seus parâmetros (<em>A, B, C</em>).
 </div>
 
 </div>
@@ -430,7 +430,6 @@ th:nth-child(2), td:nth-child(2) { text-align: center; white-space: nowrap; }
 
 </div>
 <div class="resolution">
-<h3>Anotações / Esquema Rápido:</h3>
 </div>
 </div>
 
@@ -465,7 +464,6 @@ th:nth-child(2), td:nth-child(2) { text-align: center; white-space: nowrap; }
 
 </div>
 <div class="resolution">
-<h3>Anotações / Esquema Rápido:</h3>
 </div>
 </div>
 
@@ -491,9 +489,6 @@ Nessas condições, qual será a capacidade, em metro cúbico, do cilindro escol
 (E) $25$
 
 </div>
-<div class="resolution">
-<h3>Resolução:</h3>
-</div>
 </div>
 
 ---
@@ -517,9 +512,6 @@ Quantos metros quadrados a equipe II construiu a mais do que a equipe I?
 (D) $240$
 (E) $276$
 
-</div>
-<div class="resolution">
-<h3>Resolução:</h3>
 </div>
 </div>
 
@@ -553,9 +545,6 @@ O número de estandes na situação I e o número de voluntários na situação 
 (E) menor e menor.
 
 </div>
-<div class="resolution">
-<h3>Resolução:</h3>
-</div>
 </div>
 
 ---
@@ -584,9 +573,6 @@ A escala em que essa tela representa as medidas reais é
 
 (A) $1 : 5$. &nbsp;&nbsp; (B) $1 : 11$. &nbsp;&nbsp; (C) $1 : 55$. &nbsp;&nbsp; (D) $1 : 5\,000$. &nbsp;&nbsp; (E) $1 : 500\,000$.
 
-</div>
-<div class="resolution">
-<h3>Resolução:</h3>
 </div>
 </div>
 
@@ -620,9 +606,6 @@ Os conceitos de João e Felipe foram, respectivamente,
 (E) bom e insatisfatório.
 
 </div>
-<div class="resolution">
-<h3>Resolução:</h3>
-</div>
 </div>
 
 ---
@@ -646,9 +629,6 @@ Para que os objetivos da família sejam atingidos, a capacidade mínima, em litr
 (D) $8\,000$
 (E) $16\,000$
 
-</div>
-<div class="resolution">
-<h3>Resolução:</h3>
 </div>
 </div>
 
@@ -683,7 +663,6 @@ Para que os objetivos da família sejam atingidos, a capacidade mínima, em litr
 
 </div>
 <div class="resolution">
-<h3>Anotações / Esquema Rápido:</h3>
 </div>
 </div>
 
@@ -720,9 +699,6 @@ O tempo médio, em minuto, necessário para a leitura completa de um contrato de
 (A) $13{,}0$. &nbsp;&nbsp; (B) $15{,}0$. &nbsp;&nbsp; (C) $19{,}8$. &nbsp;&nbsp; (D) $20{,}0$. &nbsp;&nbsp; (E) $23{,}3$.
 
 </div>
-<div class="resolution">
-<h3>Resolução:</h3>
-</div>
 </div>
 
 ---
@@ -752,9 +728,6 @@ Nessa cidade, a mediana desses dados, em porcentagem, da umidade relativa do ar 
 (D) $60$.
 (E) $62$.
 
-</div>
-<div class="resolution">
-<h3>Resolução:</h3>
 </div>
 </div>
 
@@ -789,9 +762,6 @@ Comparando os valores da média, da mediana e da moda da distribuição das quan
 (E) $\text{moda} < \text{mediana} < \text{média}$
 
 </div>
-<div class="resolution">
-<h3>Resolução:</h3>
-</div>
 </div>
 
 ---
@@ -805,9 +775,9 @@ Comparando os valores da média, da mediana e da moda da distribuição das quan
 <div class="example-box" style="display: inline-block; text-align: left; max-width: 720px; margin-top: 30px; font-size: 20px;">
 
 **Na volta (Segunda Metade):**
-- **Bloco 3 (35 min):** Geometria Espacial e Plana (Volumes, Áreas e Projeções)
-- **Bloco 4 (25 min):** Funções (1º e 2º Grau) e Logaritmos em Fórmulas
-- **Bloco 5 (20 min):** Análise Combinatória e Probabilidade Condicional
+- **Bloco 3:** Geometria Espacial e Plana (Volumes, Áreas e Projeções)
+- **Bloco 4:** Funções (1º e 2º Grau) e Logaritmos em Fórmulas
+- **Bloco 5:** Análise Combinatória e Probabilidade Condicional
 
 </div>
 
@@ -847,7 +817,6 @@ Comparando os valores da média, da mediana e da moda da distribuição das quan
 
 </div>
 <div class="resolution">
-<h3>Anotações / Esquema Rápido:</h3>
 </div>
 </div>
 
@@ -872,9 +841,6 @@ Em quantos metros quadrados a área do campo do Maracanã foi reduzida?
 (D) $1\,110$
 (E) $1\,145$
 
-</div>
-<div class="resolution">
-<h3>Resolução:</h3>
 </div>
 </div>
 
@@ -902,9 +868,6 @@ Qual é a quantidade mínima de água, em litro, que cada morador, em média, de
 (E) $150$
 
 </div>
-<div class="resolution">
-<h3>Resolução:</h3>
-</div>
 </div>
 
 ---
@@ -928,9 +891,6 @@ Uma caixa de descarga, acoplada a um vaso sanitário, tem a forma de paralelepí
 
 *(Continua no próximo slide...)*
 
-</div>
-<div class="resolution">
-<h3>Resolução (Volume Total):</h3>
 </div>
 </div>
 
@@ -959,9 +919,6 @@ A quantidade máxima de garrafas que serão colocadas nessa caixa, garantindo um
 (D) $3$.
 (E) $2$.
 
-</div>
-<div class="resolution">
-<h3>Resolução (Conclusão):</h3>
 </div>
 </div>
 
@@ -999,7 +956,6 @@ A quantidade máxima de garrafas que serão colocadas nessa caixa, garantindo um
 
 </div>
 <div class="resolution">
-<h3>Anotações / Esquema Rápido:</h3>
 </div>
 </div>
 
@@ -1028,9 +984,6 @@ O valor aproximado da magnitude $M_2$ do segundo terremoto, expresso com uma cas
 (E) $8{,}4$.
 
 </div>
-<div class="resolution">
-<h3>Resolução:</h3>
-</div>
 </div>
 
 ---
@@ -1056,9 +1009,6 @@ A estimativa da receita, em milhão de reais, dessa indústria, para o ano de $2
 
 (A) $7$. &nbsp;&nbsp; (B) $8$. &nbsp;&nbsp; (C) $9$. &nbsp;&nbsp; (D) $10$. &nbsp;&nbsp; (E) $11$.
 
-</div>
-<div class="resolution">
-<h3>Resolução:</h3>
 </div>
 </div>
 
@@ -1087,9 +1037,6 @@ A proposta escolhida foi a
 
 (A) I. &nbsp;&nbsp; (B) II. &nbsp;&nbsp; (C) III. &nbsp;&nbsp; (D) IV. &nbsp;&nbsp; (E) V.
 
-</div>
-<div class="resolution">
-<h3>Resolução:</h3>
 </div>
 </div>
 
@@ -1126,7 +1073,6 @@ A proposta escolhida foi a
 
 </div>
 <div class="resolution">
-<h3>Anotações / Esquema Rápido:</h3>
 </div>
 </div>
 
@@ -1158,9 +1104,6 @@ Se a quantidade de jogadores for $8$, quantas partidas serão realizadas?
 (E) $28$
 
 </div>
-<div class="resolution">
-<h3>Resolução:</h3>
-</div>
 </div>
 
 ---
@@ -1189,9 +1132,6 @@ Digitando ao acaso os dois dígitos esquecidos, a probabilidade de que o usuári
 (E) $\dfrac{2}{100}$
 
 </div>
-<div class="resolution">
-<h3>Resolução:</h3>
-</div>
 </div>
 
 ---
@@ -1217,9 +1157,6 @@ A probabilidade de uma peça defeituosa ter sido produzida pela máquina $M_2$ �
 (D) $56{,}2\%$
 (E) $71{,}8\%$
 
-</div>
-<div class="resolution">
-<h3>Resolução:</h3>
 </div>
 </div>
 
