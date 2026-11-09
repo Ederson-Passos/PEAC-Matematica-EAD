@@ -15,6 +15,7 @@ style: |
     display: flex;
     flex-direction: column;
     justify-content: flex-start !important;
+    text-align: left;
     background-image:
       radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px),
       linear-gradient(180deg, #2D0206 0%, #680912 52%, #C62828 100%);
@@ -97,6 +98,7 @@ style: |
   .theory {
     flex: 1.3;
     line-height: 1.32;
+    text-align: left;
   }
 
   .content-wrapper > .theory:only-child {
@@ -133,8 +135,16 @@ style: |
     border-radius: 0 6px 6px 0;
   }
 
-  .center { text-align: center; margin: auto 0; }
+  .center { text-align: center; }
 ---
+
+<style scoped>
+section {
+  justify-content: center !important;
+  text-align: center;
+}
+</style>
+
 <div class="center">
 
 # Matemática Pré-Vestibular
@@ -777,20 +787,16 @@ Comparando os valores da média, da mediana e da moda da distribuição das quan
 
 ---
 
-<div class="center" style="margin-top: 80px;">
-
 # ☕ Intervalo / Pausa Mental — 10 Minutos
 
 ## Descanso necessário para manter o foco na segunda metade da aula!
 
-<div class="example-box" style="display: inline-block; text-align: left; max-width: 720px; margin-top: 30px; font-size: 20px;">
+<div class="example-box" style="margin-top: 20px; font-size: 20px;">
 
 **Na volta (Segunda Metade):**
 - **Bloco 3:** Geometria Espacial e Plana (Volumes, Áreas e Projeções)
 - **Bloco 4:** Funções (1º e 2º Grau) e Logaritmos em Fórmulas
 - **Bloco 5:** Análise Combinatória e Probabilidade Condicional
-
-</div>
 
 </div>
 
@@ -1149,4 +1155,21 @@ A probabilidade de uma peça defeituosa ter sido produzida pela máquina $M_2$ �
 
 </div>
 </div>
+
+---
+
+# Boa Prova no ENEM! 🎯
+
+## Confie na sua preparação, garanta os acertos fáceis e mantenha o foco até o fim.
+
+<div style="margin-top: 25px; display: inline-block; background-color: #FFFFFF; border-radius: 12px; padding: 14px 18px 8px 18px;">
+
+![width:180px](../24%20-%20Geometria%20Analítica/logo-peac.png)
+
+</div>
+
+<div style="margin-top: 15px; font-size: 16px; color: #FFE082;">
+PEAC — Programa de Educação e Ação Comunitária
+</div>
+
 
