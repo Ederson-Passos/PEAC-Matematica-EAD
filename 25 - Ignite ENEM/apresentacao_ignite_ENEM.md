@@ -12,6 +12,7 @@ style: |
     font-family: 'Libre Baskerville', serif;
     font-size: 25px;
     padding: 30px 50px;
+    justify-content: flex-start;
     background-image:
       radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px),
       linear-gradient(180deg, #2D0206 0%, #680912 52%, #C62828 100%);
@@ -37,6 +38,7 @@ style: |
   h1 {
     color: #FFD54F;
     font-size: 29px;
+    margin-top: 0;
     margin-bottom: 5px;
     border-bottom: 1px solid rgba(255, 213, 79, 0.45);
     padding-bottom: 5px;
@@ -122,7 +124,7 @@ style: |
     border-radius: 0 6px 6px 0;
   }
 
-  .center { text-align: center; }
+  .center { text-align: center; margin: auto 0; }
 ---
 <div class="center">
 
@@ -413,7 +415,7 @@ th:nth-child(2), td:nth-child(2) { text-align: center; white-space: nowrap; }
 <div class="content-wrapper">
 <div class="theory">
 
-**Foco (65 min):** Regra de três (direta e inversa), escalas, porcentagem e conversão de unidades.
+**Foco:** Regra de três (direta e inversa), escalas, porcentagem e conversão de unidades.
 
 - **Grandezas Diretamente Proporcionais ($A \uparrow \, B \uparrow$):** A razão é constante:
   $$ \frac{A_1}{B_1} = \frac{A_2}{B_2} \quad (\text{multiplicação cruzada}) $$
@@ -610,7 +612,7 @@ Os conceitos de João e Felipe foram, respectivamente,
 
 ---
 
-# Questão 178 --- ENEM 2015 (Caderno Azul)
+# Questão 178 --- ENEM 2015
 
 <style scoped>
 .theory { font-size: 17px; }
@@ -644,7 +646,7 @@ Para que os objetivos da família sejam atingidos, a capacidade mínima, em litr
 <div class="content-wrapper">
 <div class="theory">
 
-**Foco (25 min):** Diferença entre Média, Moda e Mediana, e pegadinhas em leitura de gráficos e tabelas.
+**Foco:** Diferença entre Média, Moda e Mediana, e pegadinhas em leitura de gráficos e tabelas.
 
 - **Média Aritmética ($\bar{x}$):** Soma de todos os valores dividida pelo total de elementos (ou ponderada pelas frequências $f_i$):
   $$ \bar{x} = \frac{x_1 f_1 + x_2 f_2 + \dots + x_k f_k}{f_1 + f_2 + \dots + f_k} $$
@@ -795,7 +797,7 @@ Comparando os valores da média, da mediana e da moda da distribuição das quan
 <div class="content-wrapper">
 <div class="theory">
 
-**Foco (35 min):** Fórmulas de volume (prismas e cilindros), projeção ortogonal e áreas de figuras planas.
+**Foco:** Fórmulas de volume (prismas e cilindros), projeção ortogonal e áreas de figuras planas.
 
 - **Áreas de Figuras Planas Essenciais:**
   - Retângulo: $A = b \cdot h$ &nbsp;|&nbsp; Triângulo: $A = \frac{b \cdot h}{2}$ &nbsp;|&nbsp; Círculo: $A = \pi R^2$.
@@ -912,7 +914,7 @@ A quantidade máxima de garrafas que serão colocadas nessa caixa, garantindo um
 <div class="content-wrapper">
 <div class="theory">
 
-**Foco (25 min):** Interpretação de gráficos de 1º e 2º grau e uso de logaritmos em fórmulas prontas.
+**Foco:** Interpretação de gráficos de 1º e 2º grau e uso de logaritmos em fórmulas prontas.
 
 - **Função Afim (1º Grau — Reta de Tendência): $f(x) = ax + b$**
   - Taxa de variação constante ($a = \frac{\Delta y}{\Delta x}$): a cada aumento fixo em $x$, o valor de $y$ aumenta sempre na mesma proporção!
@@ -1023,23 +1025,24 @@ A proposta escolhida foi a
 # Bloco 5 — Probabilidade e Combinatória
 
 <style scoped>
-.theory { font-size: 17.5px; }
-.example-box { font-size: 16px; padding: 10px 14px; margin-top: 8px; }
+.theory { font-size: 15.5px; line-height: 1.22; }
+.theory p, .theory ul { margin: 5px 0; }
+.theory li { margin: 3px 0; }
+.example-box { font-size: 14.5px; padding: 8px 12px; margin-top: 6px; line-height: 1.22; }
 </style>
 
 <div class="content-wrapper">
 <div class="theory">
 
-**Foco (20 min):** Como diferenciar Arranjo de Combinação e o cálculo de probabilidade condicional.
+**Foco:** Como diferenciar Arranjo de Combinação e o cálculo de probabilidade condicional.
 
 - **Arranjo vs. Combinação (A Pergunta de Ouro: *A ordem importa?*):**
-  - **SIM (Senhas, Pódio, Códigos):** Use o Princípio Fundamental da Contagem (tracinhos) ou Arranjo:
-    $$ A_{n, p} = \frac{n!}{(n - p)!} $$
-  - **NÃO (Comissões, Duplas, Partidas de torneio em turno único):** Divida pela permutação repetida (Combinação):
+  - **SIM (Senhas, Pódio, Códigos):** Use o Princípio Fundamental da Contagem (tracinhos) ou Arranjo: $A_{n, p} = \dfrac{n!}{(n - p)!}$.
+  - **NÃO (Comissões, Duplas, Partidas em turno único):** Divida pela permutação repetida (Combinação):
     $$ C_{n, p} = \frac{n!}{p!(n - p)!} \quad \implies \quad \text{Para duplas/jogos } (p=2): \; C_{n, 2} = \frac{n(n - 1)}{2} $$
 
 - **Probabilidade e Probabilidade Condicional:**
-  - Definição: $P(A) = \frac{\text{Casos Favoráveis}}{\text{Total de Casos Possíveis}}$.
+  - Definição: $P(A) = \dfrac{\text{Casos Favoráveis}}{\text{Total de Casos Possíveis}}$.
   - **Probabilidade Condicional / Teorema de Bayes ($P(M_2 \mid \text{Defeituosa})$):** Restrinja o universo apenas à condição que já ocorreu!
     $$ P(M_2 \mid D) = \frac{\text{Defeituosas de } M_2}{\text{Total de Defeituosas } (M_1 + M_2 + M_3)} $$
 
