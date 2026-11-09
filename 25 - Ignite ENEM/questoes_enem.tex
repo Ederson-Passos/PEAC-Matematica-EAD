@@ -1,0 +1,423 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Geometria e Layout ---
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\headheight}{14.5pt}
+
+% --- Codificação e Idioma ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+
+% --- Matemática e Símbolos (AMS) ---
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{mathtools}
+
+% --- Cores, Gráficos, Vetorização e Tabelas ---
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+% --- Definição de Cores (Questão 170 — ENEM 2025) ---
+\definecolor{caixaFundo}{HTML}{E6E7E8}
+\definecolor{aguaFrente}{HTML}{55B3DF}
+\definecolor{aguaTopo}{HTML}{A4D4EC}
+\definecolor{aguaJato}{HTML}{2B9FD9}
+\definecolor{raloFundo}{HTML}{6C77B2}
+\definecolor{raloBorda}{HTML}{3B4269}
+\definecolor{boiaSubmersa}{HTML}{5C6BA8}
+\definecolor{textoCor}{HTML}{231F20}
+
+% --- Macros TikZ para a Caixa de Descarga (Questão 170 — ENEM 2025) ---
+\newcommand{\desenharCaixaBase}[2]{%
+    % #1 = altura frontal da água (y_frente)
+    % #2 = altura traseira da água (y_tras)
+    \fill[caixaFundo] (0,0) -- (5.0,0) -- (5.0,4.0) -- (4.65,4.45) -- (0.35,4.45) -- (0,4.0) -- cycle;
+    \fill[aguaFrente] (0,0) -- (5.0,0) -- (5.0,#1) -- (0,#1) -- cycle;
+    \fill[aguaFrente] (0,#1) -- (5.0,#1) -- (4.65,#2) -- (0.35,#2) -- cycle;
+    \fill[aguaTopo] (0,#1) -- (5.0,#1) -- (4.65,#2) -- (0.35,#2) -- cycle;
+    \filldraw[fill=raloFundo, draw=raloBorda, line width=0.7pt] (2.5,0.42) ellipse (0.40cm and 0.14cm);
+}
+
+\newcommand{\desenharArestasCaixa}{%
+    \begin{scope}[dashed, line width=0.85pt, dash pattern=on 3pt off 2pt, draw=textoCor]
+        \draw (0,0) -- (0.35,0.85);
+        \draw (5.0,0) -- (4.65,0.85);
+        \draw (0.35,0.85) -- (4.65,0.85);
+        \draw (0.35,0.85) -- (0.35,4.0);
+        \draw (4.65,0.85) -- (4.65,4.0);
+    \end{scope}
+    \begin{scope}[line width=0.9pt, draw=textoCor, line join=round]
+        \draw (0,0) rectangle (5.0,4.0);
+        \draw (0,4.0) -- (0.35,4.45) -- (4.65,4.45) -- (5.0,4.0);
+        \draw (0.35,4.0) -- (0.35,4.45);
+        \draw (4.65,4.0) -- (4.65,4.45);
+    \end{scope}
+}
+
+\newcommand{\desenharCotasBase}{%
+    \begin{scope}[draw=textoCor]
+        \draw[dashed, line width=0.6pt, dash pattern=on 2.5pt off 2pt] (0,0) -- (-1.15,0);
+        \draw[dashed, line width=0.6pt, dash pattern=on 2.5pt off 2pt] (0,0.85) -- (-0.80,0.85);
+        \draw[<->, >=Stealth, line width=0.6pt] (-1.08,0.03) -- (-0.75,0.82)
+            node[midway, left=4pt, font=\sffamily\small, text=textoCor] {1,5 dm};
+    \end{scope}
+    \begin{scope}[draw=textoCor]
+        \draw[dashed, line width=0.6pt, dash pattern=on 2.5pt off 2pt] (0,0) -- (-0.18,-0.58);
+        \draw[dashed, line width=0.6pt, dash pattern=on 2.5pt off 2pt] (5.0,0) -- (5.18,-0.58);
+        \draw[<->, >=Stealth, line width=0.6pt] (-0.15,-0.52) -- (5.15,-0.52)
+            node[midway, fill=white, inner sep=4pt, font=\sffamily\small, text=textoCor] {2,5 dm};
+    \end{scope}
+}
+
+% --- Configuração de Cabeçalho e Rodapé ---
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Revisão de Matemática — ENEM}
+\chead{}
+\rhead{\thepage}
+\rfoot{Data: \today}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% --- Início do Documento ---
+\begin{document}
+
+% =========================================================================
+% Bloco 1 — Matemática básica e grandezas - 65 min
+% =========================================================================
+
+\section*{Questão 136 --- ENEM 2025}
+
+Uma pessoa pretende instalar um kit de gás natural veicular (GNV) em seu carro. Na loja que escolheu para realizar a compra e instalação desse kit, havia cinco modelos de cilindro para armazenamento do gás, cujas capacidades, em metro cúbico, eram, respectivamente: $10$, $14$, $17$, $21$ e $25$. O preço do cilindro é proporcional à sua capacidade. Esse carro rodará $30\text{ km}$ diariamente, $7\text{ dias}$ por semana, e o consumo do GNV é de $1\text{ m}^3$ a cada $13\text{ km}$ rodados. A pessoa escolherá o modelo de cilindro de menor preço e que garanta apenas um abastecimento semanal.
+
+Nessas condições, qual será a capacidade, em metro cúbico, do cilindro escolhido por essa pessoa?
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $10$
+    \item $14$
+    \item $17$
+    \item $21$
+    \item $25$
+\end{enumerate}
+
+\section*{Questão 147 --- ENEM PPL 2024}
+
+Um engenheiro civil organizou duas equipes de pedreiros, I e II, para a construção de um muro bastante extenso. Todos os pedreiros, de ambas as equipes, apresentam o mesmo rendimento por hora trabalhada frente à construção planejada. A equipe I era composta por $3$ pedreiros, que construíram $36\text{ metros quadrados}$ de muro, em $2\text{ dias}$, trabalhando $6\text{ horas por dia}$. A equipe II era composta por $5$ pedreiros, que trabalharam $8\text{ horas diárias}$, durante $6\text{ dias}$.
+
+Quantos metros quadrados a equipe II construiu a mais do que a equipe I?
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $144$
+    \item $180$
+    \item $204$
+    \item $240$
+    \item $276$
+\end{enumerate}
+
+\section*{Questão 148 --- ENEM PPL 2024}
+
+Na primeira edição de uma Feira do Livro, a organização contou com a participação de dez voluntários, de mesma habilidade e experiência, que montaram cinco estandes de livros em uma semana, trabalhando todos os dias.
+
+Na segunda edição da Feira do Livro, a organização dispôs de duas semanas para montar os estandes. Considere que todos os novos voluntários escolhidos tenham a mesma experiência, habilidade e produtividade dos voluntários da primeira edição da feira e que trabalharão todos os dias nessas duas semanas.
+
+Considere duas situações para a segunda edição:
+\begin{itemize}
+    \item[\textbf{I:}] o número de voluntários permanecerá o mesmo;
+    \item[\textbf{II:}] o número de estandes a serem montados permanecerá o mesmo.
+\end{itemize}
+
+Observe que o aumento no tempo de organização para montar os estandes, junto a uma das duas situações citadas, pode fazer o valor das outras variáveis (número de voluntários e de estandes) aumentar, diminuir ou permanecer igual.
+
+O número de estandes na situação I e o número de voluntários na situação II, na segunda edição da feira, comparados aos números da primeira edição, serão, respectivamente,
+
+\begin{enumerate}[label=(\Alph*)]
+    \item maior e maior.
+    \item maior e menor.
+    \item igual e igual.
+    \item igual e menor.
+    \item menor e menor.
+\end{enumerate}
+
+\section*{Questão 149 --- ENEM 2023}
+
+Um controlador de voo dispõe de um instrumento que descreve a altitude de uma aeronave em voo, em função da distância em solo. Essa distância em solo é a medida na horizontal entre o ponto de origem do voo até o ponto que representa a projeção ortogonal da posição da aeronave, em voo, no solo. Essas duas grandezas são dadas numa mesma unidade de medida.
+
+A tela do instrumento representa proporcionalmente as dimensões reais das distâncias associadas ao voo. A figura apresenta a tela do instrumento depois de concluída a viagem de um avião, sendo a medida do lado de cada quadradinho da malha igual a $1\text{ cm}$.
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.55, transform shape]
+        % Borda da tela do instrumento
+        \draw[thick] (-1.0, -1.2) rectangle (15.0, 4.8);
+
+        % Malha quadriculada com linhas cinzas claras
+        \draw[step=1.0, lightgray, thin] (0,0) grid (14,4);
+
+        % Eixos coordenados com setas e rótulos
+        \draw[-{Stealth}, thick] (0,0) -- (14.6,0) node[anchor=north west] {Distância};
+        \draw[-{Stealth}, thick] (0,0) -- (0,4.6) node[anchor=south east] {Altitude};
+
+        % Ponto e rótulo de Origem do voo
+        \fill (0,0) circle (3.5pt);
+        \node[align=center] at (0, -0.6) {Origem\\do voo};
+
+        % Ponto e rótulo de Destino
+        \fill (13,0) circle (3.5pt);
+        \node[anchor=north] at (11.8, -0.2) {Destino};
+
+        % Trajetória vetorial exata do voo
+        \draw[very thick] (0,0) -- (2,1) -- (7,1) -- (10,0.3) -- (11,0.4) -- (13,0);
+    \end{tikzpicture}
+\end{center}
+
+Essa tela apresenta os dados de um voo cuja maior altitude alcançada foi de $5\text{ km}$.
+
+A escala em que essa tela representa as medidas reais é
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $1 : 5$.
+    \item $1 : 11$.
+    \item $1 : 55$.
+    \item $1 : 5\,000$.
+    \item $1 : 500\,000$.
+\end{enumerate}
+
+\section*{Questão 140 --- ENEM 2024}
+
+João e Felipe participaram, na escola, de uma maratona de matemática na qual, durante uma semana, resolveram $200$ questões cada. Nessa maratona, a porcentagem $P$ de acertos de cada participante é convertida em um conceito:
+
+\begin{itemize}
+    \item \textbf{insatisfatório:} se $0 \le P < 50$;
+    \item \textbf{regular:} se $50 \le P < 60$;
+    \item \textbf{bom:} se $60 \le P < 75$;
+    \item \textbf{muito bom:} se $75 \le P < 90$;
+    \item \textbf{excelente:} se $90 \le P \le 100$.
+\end{itemize}
+
+João acertou $75\%$ das questões da maratona e Felipe acertou $30\%$ a menos que a quantidade de questões que João acertou.
+
+Os conceitos de João e Felipe foram, respectivamente,
+
+\begin{enumerate}[label=(\Alph*)]
+    \item muito bom e bom.
+    \item muito bom e regular.
+    \item muito bom e insatisfatório.
+    \item bom e regular.
+    \item bom e insatisfatório.
+\end{enumerate}
+
+\section*{Questão 178 --- ENEM 2015 (Caderno Azul)}
+
+Para economizar em suas contas mensais de água, uma família de $10$ pessoas deseja construir um reservatório para armazenar a água captada das chuvas, que tenha capacidade suficiente para abastecer a família por $20$ dias. Cada pessoa da família consome, diariamente, $0{,}08\text{ m}^3$ de água.
+
+Para que os objetivos da família sejam atingidos, a capacidade mínima, em litros, do reservatório a ser construído deve ser:
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $16$
+    \item $800$
+    \item $1\,600$
+    \item $8\,000$
+    \item $16\,000$
+\end{enumerate}
+
+% =========================================================================
+% Bloco 2 — Estatística e gráficos - 25 minutos
+% =========================================================================
+
+\section*{Questão 154 --- ENEM 2024}
+
+Contratos de vários serviços disponíveis na internet apresentam uma quantidade excessiva de informações. Isso faz com que o tempo necessário para a leitura desses contratos possa ser longo.
+
+O quadro apresenta uma amostra do tempo considerado necessário para a leitura completa do contrato de alguns serviços digitais.
+
+\begin{center}
+    \begin{tabular}{cc}
+        \toprule
+        \textbf{Serviço} & \textbf{Tempo (minuto)} \\
+        \midrule
+        A                & $36$                    \\
+        B                & $17$                    \\
+        C                & $27$                    \\
+        D                & $13$                    \\
+        E                & $13$                    \\
+        F                & $13$                    \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+\noindent {\footnotesize ROMERO, L. Não li e concordo. \textit{Superinteressante}, n. 307, ago. 2012 (adaptado).}
+
+\vspace{0.4cm}
+
+\noindent O tempo médio, em minuto, necessário para a leitura completa de um contrato de serviço dentre os listados no quadro é, com uma casa decimal, aproximadamente,
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $13{,}0$.
+    \item $15{,}0$.
+    \item $19{,}8$.
+    \item $20{,}0$.
+    \item $23{,}3$.
+\end{enumerate}
+
+\section*{Questão 178 --- ENEM 2024}
+
+A umidade relativa do ar é um dos indicadores utilizados na meteorologia para fazer previsões sobre o clima. O quadro apresenta as médias mensais, em porcentagem, da umidade relativa do ar em um período de seis meses consecutivos em uma cidade.
+
+\begin{center}
+    \begin{tabular}{|l|c|c|c|c|c|c|}
+        \hline
+        \textbf{Meses}        & Maio & Junho & Julho & Agosto & Setembro & Outubro \\ \hline
+        \textbf{Umidade (\%)} & $66$ & $64$  & $54$  & $46$   & $60$     & $64$    \\ \hline
+    \end{tabular}
+\end{center}
+
+Nessa cidade, a mediana desses dados, em porcentagem, da umidade relativa do ar no período considerado foi:
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $56$.
+    \item $58$.
+    \item $59$.
+    \item $60$.
+    \item $62$.
+\end{enumerate}
+
+\section*{Questão 140 --- ENEM 2023}
+
+Uma empresa de transporte faz regularmente um levantamento do número de viagens realizadas durante o dia por todos os $160$ motoristas cadastrados em seu aplicativo. Em um certo dia, foi gerado um relatório, por meio de um gráfico de barras, no qual se relacionaram a quantidade de motoristas com a quantidade de viagens realizadas até aquele instante do dia.
+
+A distribuição da frequência da quantidade de viagens por motorista é dada por:
+\begin{itemize}
+    \item $1$ viagem: $10$ motoristas
+    \item $2$ viagens: $10$ motoristas
+    \item $3$ viagens: $55$ motoristas
+    \item $4$ viagens: $25$ motoristas
+    \item $5$ viagens: $0$ motoristas
+    \item $6$ viagens: $50$ motoristas
+    \item $7$ viagens: $10$ motoristas
+\end{itemize}
+
+Comparando os valores da média, da mediana e da moda da distribuição das quantidades de viagens realizadas pelos motoristas cadastrados nessa empresa, obtém-se:
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $\text{mediana} = \text{média} < \text{moda}$
+    \item $\text{mediana} = \text{moda} < \text{média}$
+    \item $\text{mediana} < \text{média} < \text{moda}$
+    \item $\text{moda} < \text{média} < \text{mediana}$
+    \item $\text{moda} < \text{mediana} < \text{média}$
+\end{enumerate}
+
+% =========================================================================
+% Bloco 3 — Geometria espacial e plana - 35 minutos
+% =========================================================================
+
+\section*{Questão 145 --- ENEM 2024}
+
+O estádio do Maracanã passou por algumas modificações estruturais para a realização da Copa do Mundo de 2014, como, por exemplo, as dimensões do campo retangular. Para se adaptar aos padrões da Fifa, as dimensões do campo foram reduzidas de $110\text{ m} \times 75\text{ m}$ para $105\text{ m} \times 68\text{ m}$.
+
+Em quantos metros quadrados a área do campo do Maracanã foi reduzida?
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $24$
+    \item $35$
+    \item $555$
+    \item $1\,110$
+    \item $1\,145$
+\end{enumerate}
+
+\section*{Questão 142 --- ENEM 2023}
+
+A água utilizada pelos $75$ moradores de um vilarejo provém de um reservatório de formato cilíndrico circular reto cujo raio da base mede $5\text{ metros}$, sempre abastecido no primeiro dia de cada mês por caminhões-pipa. Cada morador desse vilarejo consome, em média, $200\text{ litros}$ de água por dia.
+
+No mês de junho de um determinado ano, o vilarejo festejou o dia do seu padroeiro e houve um gasto extra de água nos primeiros $20\text{ dias}$. Passado esse período, as pessoas verificaram a quantidade de água presente no reservatório e constataram que o nível da coluna de água estava em $1{,}5\text{ metro}$. Decidiram, então, fazer um racionamento de água durante os $10\text{ dias}$ seguintes. Considere $3$ como aproximação para $\pi$.
+
+Qual é a quantidade mínima de água, em litro, que cada morador, em média, deverá economizar por dia, de modo que o reservatório não fique sem água nos próximos $10\text{ dias}$?
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $50$
+    \item $60$
+    \item $80$
+    \item $140$
+    \item $150$
+\end{enumerate}
+
+\section*{Questão 170 --- ENEM 2025}
+
+Uma caixa de descarga, acoplada a um vaso sanitário, tem a forma de paralelepípedo reto retângulo cujas dimensões internas da base são $2{,}5\text{ dm}$ e $1{,}5\text{ dm}$. Nessa caixa há uma boia que interrompe o abastecimento quando a altura da coluna de água atinge $2\text{ dm}$, conforme a figura.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+
+    % =========================================================
+    % FIGURA SUPERIOR: Caixa enchendo (boia abaixada)
+    % =========================================================
+    \begin{scope}[yshift=6.0cm]
+        \desenharCaixaBase{0.62}{1.42}
+
+        % Ondulações e jato de água
+        \draw[aguaJato!80, line width=0.6pt] (4.48,1.02) ellipse (0.24cm and 0.08cm);
+        \draw[aguaJato!90, line width=0.6pt] (4.48,1.02) ellipse (0.13cm and 0.045cm);
+        \draw[aguaJato, line width=1.8pt, line cap=round] (4.48,3.45) -- (4.48,1.02);
+
+        % Mecanismo da boia (abaixada)
+        \draw[textoCor, line width=2.2pt] (4.45,3.45) -- (4.86,3.45);
+        \draw[textoCor, line width=1.0pt] (4.46,3.45) -- (4.16,1.98);
+        \fill[textoCor] (4.16,1.98) circle (0.22cm);
+
+        \desenharArestasCaixa
+        \desenharCotasBase
+    \end{scope}
+
+    % =========================================================
+    % FIGURA INFERIOR: Abastecimento interrompido (altura 2 dm)
+    % =========================================================
+    \begin{scope}[yshift=0cm]
+        \desenharCaixaBase{3.05}{3.62}
+
+        % Mecanismo da boia (levantada na horizontal)
+        \draw[textoCor, line width=2.2pt] (4.45,3.45) -- (4.86,3.45);
+        \draw[textoCor, line width=1.0pt] (4.46,3.45) -- (2.90,3.45);
+
+        % Esfera da boia (metade submersa e metade fora d'água)
+        \begin{scope}
+            \clip (2.90,3.45) circle (0.23cm);
+            \fill[boiaSubmersa] (2.60,3.15) rectangle (3.20,3.40);
+            \fill[textoCor] (2.60,3.40) rectangle (3.20,3.75);
+            \draw[aguaTopo!70!boiaSubmersa, line width=0.6pt] (2.90,3.40) ellipse (0.23cm and 0.04cm);
+        \end{scope}
+
+        \desenharArestasCaixa
+        \desenharCotasBase
+
+        % Cota de 2 dm (altura da coluna de água à direita)
+        \begin{scope}[draw=textoCor]
+            \draw[dashed, line width=0.6pt, dash pattern=on 2.5pt off 2pt] (5.0,0) -- (6.05,0);
+            \draw[dashed, line width=0.6pt, dash pattern=on 2.5pt off 2pt] (5.0,3.05) -- (6.05,3.05);
+            \draw[<->, >=Stealth, line width=0.6pt] (5.92,0) -- (5.92,3.05)
+                node[midway, fill=white, inner sep=4pt, font=\sffamily\small, text=textoCor] {2 dm};
+        \end{scope}
+    \end{scope}
+
+\end{tikzpicture}
+\end{center}
+
+A cada acionamento da descarga, todo o volume de água contida na caixa é despejado no vaso. Para reduzir o volume de água despejado a cada acionamento, uma pessoa colocará, no interior dessa caixa, garrafas de $300\text{ mL}$, cheias de areia e tampadas, de modo a ficarem submersas quando o abastecimento for interrompido.
+
+Para garantir o funcionamento eficiente, o mínimo de água despejada a cada acionamento deve ser de $5\text{ L}$.
+
+A quantidade máxima de garrafas que serão colocadas nessa caixa, garantindo um funcionamento eficiente, é igual a
+
+\begin{enumerate}[label=(\Alph*)]
+    \item $10$.
+    \item $8$.
+    \item $4$.
+    \item $3$.
+    \item $2$.
+\end{enumerate}
+
+\end{document}
