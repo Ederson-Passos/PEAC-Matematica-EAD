@@ -1158,6 +1158,15 @@ A probabilidade de uma peça defeituosa ter sido produzida pela máquina $M_2$ �
 
 ---
 
+<style scoped>
+section {
+  justify-content: center !important;
+  text-align: center;
+}
+</style>
+
+<div class="center">
+
 # Boa Prova no ENEM! 🎯
 
 ## Confie na sua preparação, garanta os acertos fáceis e mantenha o foco até o fim.
@@ -1170,6 +1179,8 @@ A probabilidade de uma peça defeituosa ter sido produzida pela máquina $M_2$ �
 
 <div style="margin-top: 15px; font-size: 16px; color: #FFE082;">
 PEAC — Programa de Educação e Ação Comunitária
+</div>
+
 </div>
 
 
